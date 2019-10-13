@@ -23,7 +23,7 @@ namespace Hyperion {
 		glDeleteShader(fragmentShader);
 	}
 
-	unsigned int Shader::GetShader() {
+	unsigned int Shader::getShader() {
 		return shader;
 	}
 

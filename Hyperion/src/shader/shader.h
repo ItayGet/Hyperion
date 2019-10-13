@@ -11,6 +11,6 @@ namespace Hyperion {
 		unsigned int shader = 0;
 	public:
 		Shader(const char* vert, const char* frag);
-		unsigned int GetShader();
+		unsigned int getShader();
 	};
 }

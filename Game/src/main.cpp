@@ -1,10 +1,10 @@
-#include "hyperion.h"
-using namespace Hyperion;
-
+#include "hpr.h"
 int main(void) {
+	bool succ = false;
+	Hyperion::Hyperion a("Test", 640, 480, succ);
 
-	HPRCore a;
-
-	while (a.Update());
-
+	if (succ) {
+		while (a.Update());
+	}
+	a.terminate();
 }

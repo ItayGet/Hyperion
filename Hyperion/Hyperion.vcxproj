@@ -184,15 +184,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\hyperion\hyperion.h" />
     <ClInclude Include="src\api.h" />
+    <ClInclude Include="src\renderer\renderer.h" />
     <ClInclude Include="src\shader\shader.h" />
-    <ClInclude Include="src\core\core.h" />
-    <ClInclude Include="src\hyperion.h" />
+    <ClInclude Include="src\initializer\initializer.h" />
+    <ClInclude Include="src\hpr.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="src\hyperion\hyperion.cpp" />
+    <ClCompile Include="src\renderer\renderer.cpp" />
     <ClCompile Include="src\shader\shader.cpp" />
-    <ClCompile Include="src\core\core.cpp" />
+    <ClCompile Include="src\initializer\initializer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
