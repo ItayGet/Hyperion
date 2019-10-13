@@ -1,5 +1,4 @@
-﻿  Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 124 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  Hyperion.vcxproj -> C:\Users\Galia\source\repos\Hyperion\x64\Release\Hyperion.dll
+﻿  shader.cpp
+C:\Users\Galia\Source\Repos\Hyperion\Hyperion\src\core\core.h(14,16): error C3646: 'shader': unknown override specifier
+  core.cpp
+C:\Users\Galia\Source\Repos\Hyperion\Hyperion\src\core\core.h(14,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int

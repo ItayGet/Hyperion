@@ -5,7 +5,6 @@ int main(void) {
 
 	HPRCore a;
 
-	a.Init();
-
 	while (a.Update());
+
 }
