@@ -1,5 +1,6 @@
 #include "renderer.h"
 #include "shader/shader.h"
+#include "glm/glm.hpp"
 
 #define VERTEX_FILE_PATH "shaders/example.vert"
 #define FRAGMENT_FILE_PATH "shaders/example.frag"
@@ -8,11 +9,12 @@ namespace Hyperion {
 
 	Renderer::Renderer(GLFWwindow* window) : window(window) {
 		float vertices[] = {
-		-1.0f, -1.0f, 0.0f,
-		 1.0f, -1.0f, 0.0f,
-		-1.0f,  1.0f, 0.0f,
-		 1.0f,  1.0f, 0.0f
+			-1.0f, -1.0f, 0.0f,
+			 1.0f, -1.0f, 0.0f,
+			-1.0f,  1.0f, 0.0f,
+			 1.0f,  1.0f, 0.0f
 		};
+
 		unsigned int indices[] = {
 			0, 1, 2,
 			1, 2, 3 
@@ -21,7 +23,6 @@ namespace Hyperion {
 		Shader shader(VERTEX_FILE_PATH, FRAGMENT_FILE_PATH);
 		shaderProg = shader.getShader();
 		glUseProgram(shaderProg);
-
 
 		glGenBuffers(1, &vbo);
 		glGenBuffers(1, &ebo);
@@ -41,11 +42,6 @@ namespace Hyperion {
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
-
-		//unsigned int ubo;
-		//glGenBuffers(1, &ubo);
-		//glBindBuffer(GL_UNIFORM_BUFFER, ubo);
-		//glBufferData(GL_UNIFORM_BUFFER, );
 	}
 
 	bool Renderer::Update() {

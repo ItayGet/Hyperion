@@ -93,7 +93,7 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile />
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -116,7 +116,7 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile />
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -140,7 +140,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ShowIncludes>true</ShowIncludes>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -169,7 +169,7 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile />
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

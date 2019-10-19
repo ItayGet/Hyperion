@@ -1,7 +1,6 @@
 #include "initializer.h"
 
 namespace Hyperion {
-
 	Initializer::Initializer(const char* windowName, int width, int height, bool &succ) {
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -20,6 +19,9 @@ namespace Hyperion {
 		}
 
 		glfwMakeContextCurrent(window);
+		//otherwise it eats my battery away
+		glfwSwapInterval(1);
+
 
 		if (glewInit() != GLEW_OK) {
 			succ = false;

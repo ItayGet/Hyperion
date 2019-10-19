@@ -34,6 +34,7 @@ namespace Hyperion {
 		unsigned int shader = glCreateShader(type);
 		glShaderSource(shader, 1, &file, 0);
 		glCompileShader(shader);
+		checkErr(shader, GL_COMPILE_STATUS);
 		return shader;
 	}
 
@@ -41,10 +42,10 @@ namespace Hyperion {
 		int  success;
 		char infoLog[512];
 		glGetShaderiv(shader, pname, &success);
-		if (!success)
+		if (!success || true)
 		{
 			glGetShaderInfoLog(shader, 512, NULL, infoLog);
-			std::cout << "ERROR::SHADER::COMPILATION_FAILED\n" << infoLog << std::endl;
+			std::cout << infoLog << std::endl;
 		}
 	}
 
@@ -55,5 +56,26 @@ namespace Hyperion {
 		std::stringstream stream;
 		stream << t.rdbuf();
 		file = stream.str();
+	}
+
+	unsigned int Shader::addUniform(const char* name, unsigned int size, unsigned int usage) {
+		unsigned int ubo;
+		glGenBuffers(1, &ubo);
+		glBindBuffer(GL_UNIFORM_BUFFER, ubo);
+		glBufferData(GL_UNIFORM_BUFFER, size, NULL, usage);
+
+		unsigned int blockIndex = uniformIndex++;
+
+		unsigned int nameIndex = glGetUniformBlockIndex(shader, name);
+		glUniformBlockBinding(shader, nameIndex, blockIndex);
+
+		glBindBufferBase(GL_UNIFORM_BUFFER, uniformIndex, ubo);
+
+		return blockIndex;
+	}
+
+	void Shader::updateUniform(unsigned int block, void* const data, unsigned int size) {
+		glBindBuffer(GL_UNIFORM_BUFFER, block);
+		glBufferSubData(GL_UNIFORM_BUFFER, 0, size, data);
 	}
 }
