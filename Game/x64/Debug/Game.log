@@ -1,22 +1,22 @@
 ﻿  main.cpp
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9,37): warning C4251: 'Hyperion::Hyperion::renderer': class 'std::unique_ptr<Hyperion::Renderer,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9,37): warning C4251:         with
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9,37): warning C4251:         [
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9,37): warning C4251:             _Ty=Hyperion::Renderer
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9,37): warning C4251:         ]
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9): message : see declaration of 'std::unique_ptr<Hyperion::Renderer,std::default_delete<_Ty>>'
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9): message :         with
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9): message :         [
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9): message :             _Ty=Hyperion::Renderer
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9): message :         ]
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,43): warning C4251: 'Hyperion::Hyperion::initializer': class 'std::unique_ptr<Hyperion::Initializer,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,43): warning C4251:         with
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,43): warning C4251:         [
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,43): warning C4251:             _Ty=Hyperion::Initializer
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,43): warning C4251:         ]
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message : see declaration of 'std::unique_ptr<Hyperion::Initializer,std::default_delete<_Ty>>'
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         with
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         [
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :             _Ty=Hyperion::Initializer
-C:\Users\Galia\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         ]
-  Game.vcxproj -> C:\Users\Galia\source\repos\Hyperion\x64\Debug\Game.exe
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9,37): warning C4251:  'Hyperion::Hyperion::renderer': class 'std::unique_ptr<Hyperion::Renderer,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9,37): warning C4251:         with
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9,37): warning C4251:         [
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9,37): warning C4251:             _Ty=Hyperion::Renderer
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9,37): warning C4251:         ]
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9): message :  see declaration of 'std::unique_ptr<Hyperion::Renderer,std::default_delete<_Ty>>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9): message :         with
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9): message :         [
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9): message :             _Ty=Hyperion::Renderer
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(9): message :         ]
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,43): warning C4251:  'Hyperion::Hyperion::initializer': class 'std::unique_ptr<Hyperion::Initializer,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,43): warning C4251:         with
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,43): warning C4251:         [
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,43): warning C4251:             _Ty=Hyperion::Initializer
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,43): warning C4251:         ]
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :  see declaration of 'std::unique_ptr<Hyperion::Initializer,std::default_delete<_Ty>>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         with
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         [
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :             _Ty=Hyperion::Initializer
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         ]
+  Game.vcxproj -> C:\Users\itayg\source\repos\Hyperion\x64\Debug\Game.exe

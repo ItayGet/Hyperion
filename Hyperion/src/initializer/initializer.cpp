@@ -20,7 +20,7 @@ namespace Hyperion {
 
 		glfwMakeContextCurrent(window);
 		//otherwise it eats my battery away
-		glfwSwapInterval(1);
+		//glfwSwapInterval(1);
 
 
 		if (glewInit() != GLEW_OK) {

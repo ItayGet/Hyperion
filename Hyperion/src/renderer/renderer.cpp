@@ -21,7 +21,10 @@ namespace Hyperion {
 		};
 
 		Shader shader(VERTEX_FILE_PATH, FRAGMENT_FILE_PATH);
+		glm::vec3 data = glm::vec3(1, 0., 0.);
+		unsigned int block = shader.addUniform("hello", sizeof(float), GL_DYNAMIC_DRAW);
 		shaderProg = shader.getShader();
+		Shader::updateUniform(shaderProg, block, &data, sizeof(data));
 		glUseProgram(shaderProg);
 
 		glGenBuffers(1, &vbo);
@@ -53,7 +56,6 @@ namespace Hyperion {
 		glClearColor(.0f, .0f, .0f, .0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		//shader.use();
 		glBindVertexArray(vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
