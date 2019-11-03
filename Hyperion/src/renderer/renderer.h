@@ -2,10 +2,21 @@
 #include "api.h"
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
+#include "glm/glm.hpp"
 
 namespace Hyperion {
 	class HPR_API Renderer {
 	private:
+		struct Shape {
+			glm::vec3 pos;
+			float radius;
+		};
+
+		struct ShapeData {
+			Shape shapes[128];
+			int size;
+		};
+
 		GLFWwindow* window;
 		bool exit = false;
 		int shaderProg = 0;

@@ -9,6 +9,7 @@ namespace Hyperion {
 		void readEntireFile(const char* fpath, std::string& file);
 		unsigned int createShader(const char* fpath, const unsigned int type);
 		unsigned int shader = 0;
+		//TODO: make this static
 		unsigned int uniformIndex = 0;
 	public:
 		Shader(const char* vert, const char* frag);

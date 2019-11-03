@@ -1,6 +1,5 @@
 #include "renderer.h"
 #include "shader/shader.h"
-#include "glm/glm.hpp"
 
 #define VERTEX_FILE_PATH "shaders/example.vert"
 #define FRAGMENT_FILE_PATH "shaders/example.frag"
@@ -8,6 +7,7 @@
 namespace Hyperion {
 
 	Renderer::Renderer(GLFWwindow* window) : window(window) {
+		//Setting up vertices
 		float vertices[] = {
 			-1.0f, -1.0f, 0.0f,
 			 1.0f, -1.0f, 0.0f,
@@ -20,13 +20,24 @@ namespace Hyperion {
 			1, 2, 3 
 		};
 
+		//Shader stuff
 		Shader shader(VERTEX_FILE_PATH, FRAGMENT_FILE_PATH);
-		glm::vec3 data = glm::vec3(1, 0., 0.);
-		unsigned int block = shader.addUniform("hello", sizeof(float), GL_DYNAMIC_DRAW);
+
+		ShapeData data
+		{
+			{
+				glm::vec3(0.5, 0., -5.), 1.,
+				glm::vec3(-0.5, 0., -5), 1.
+			},
+			2
+		};
+
+		unsigned int block = shader.addUniform("Shapes", sizeof(data), GL_DYNAMIC_DRAW);
 		shaderProg = shader.getShader();
 		Shader::updateUniform(shaderProg, block, &data, sizeof(data));
 		glUseProgram(shaderProg);
 
+		//Handling vertex buffer objeccts and element buffer objects
 		glGenBuffers(1, &vbo);
 		glGenBuffers(1, &ebo);
 		glGenVertexArrays(1, &vao);
