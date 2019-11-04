@@ -12,6 +12,8 @@ struct Ray {
 struct Shape {
 	vec3 pos;
     float radius;
+	vec3 color;
+	float padding;
 };
 
 struct RayHit {
@@ -66,11 +68,6 @@ vec3 normal(Shape s, vec3 pos) {
     return normalize(pos-s.pos);
 }
 
-vec3 normalScene(vec3 pos) {
-    Shape s = Shape(vec3(0., 0., -5.), 1.);
-    return normal(s, pos);
-}
-
 vec3 rayMarch(Ray ray) {
     while(ray.dist <= MAX_DIST) {
         RayHit rayHit = sdfScene(ray.pos);
@@ -83,7 +80,7 @@ vec3 rayMarch(Ray ray) {
             float doot = dot(lightDir, normal(rayHit.shape, ray.pos));
             doot /= 2.;
             doot += .5;
-            return vec3(1., 1., 0.)*doot;
+            return rayHit.shape.color*doot;
         }
         ray.dist += rayHit.dist;
         ray.pos += rayHit.dist * ray.dir;

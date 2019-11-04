@@ -5,6 +5,11 @@
 #define FRAGMENT_FILE_PATH "shaders/example.frag"
 
 namespace Hyperion {
+	//Renderer::Shape::Shape(glm::vec3 pos, float radius, glm::vec3 color) {
+	//	this->pos = pos;
+	//	this->radius = radius;
+	//	this->color = color;
+	//}
 
 	Renderer::Renderer(GLFWwindow* window) : window(window) {
 		//Setting up vertices
@@ -23,18 +28,20 @@ namespace Hyperion {
 		//Shader stuff
 		Shader shader(VERTEX_FILE_PATH, FRAGMENT_FILE_PATH);
 
-		ShapeData data
+		shapeData =
 		{
 			{
-				glm::vec3(0.5, 0., -5.), 1.,
-				glm::vec3(-0.5, 0., -5), 1.
+				glm::vec3(0.5, 0., -5.), 1., glm::vec3(1., 0., 0.), 0.,
+				glm::vec3(0. , 0., -5), 1.2, glm::vec3(1., 1., 1.), 0.,
+				glm::vec3(-0.5, 0., -5), 1., glm::vec3(0., 0., 1.), 0.,
 			},
-			2
+			3
 		};
 
-		unsigned int block = shader.addUniform("Shapes", sizeof(data), GL_DYNAMIC_DRAW);
+		shapesBlock = shader.addUniform("shape", sizeof(shapeData), GL_DYNAMIC_DRAW);
+
 		shaderProg = shader.getShader();
-		Shader::updateUniform(shaderProg, block, &data, sizeof(data));
+		Shader::updateUniform(shaderProg, shapesBlock, &shapeData, sizeof(shapeData));
 		glUseProgram(shaderProg);
 
 		//Handling vertex buffer objeccts and element buffer objects
@@ -63,6 +70,12 @@ namespace Hyperion {
 			terminate();
 			return false;
 		}
+
+
+		//double counter = glfwGetTime();
+		//counter = counter > 5. ? counter - 5. : 0.;
+		//shapeData.shapes[0].pos = glm::vec3(0.5 - counter/4, 0., -5);
+		//Shader::updateUniform(shader, shapesBlock, &shapeData, sizeof(shapeData));
 
 		glClearColor(.0f, .0f, .0f, .0f);
 		glClear(GL_COLOR_BUFFER_BIT);

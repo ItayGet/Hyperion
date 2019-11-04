@@ -10,6 +10,8 @@ namespace Hyperion {
 		struct Shape {
 			glm::vec3 pos;
 			float radius;
+			glm::vec3 color;
+			float padding;
 		};
 
 		struct ShapeData {
@@ -21,6 +23,9 @@ namespace Hyperion {
 		bool exit = false;
 		int shaderProg = 0;
 		unsigned int vao = 0, vbo = 0, ebo = 0;
+
+		unsigned int shader, shapesBlock;
+		ShapeData shapeData;
 	public:
 		Renderer(GLFWwindow* window);
 		virtual ~Renderer();

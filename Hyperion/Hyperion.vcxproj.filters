@@ -33,7 +33,7 @@
     <ClInclude Include="src\hyperion\hyperion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Shapes\shape.h">
+    <ClInclude Include="src\shapes\shape.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,7 +53,7 @@
     <ClCompile Include="src\hyperion\hyperion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Shapes\shape.cpp">
+    <ClCompile Include="src\shapes\shape.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -184,7 +184,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Shapes\shape.h" />
+    <ClInclude Include="src\shapes\shape.h" />
     <ClInclude Include="src\hyperion\hyperion.h" />
     <ClInclude Include="src\api.h" />
     <ClInclude Include="src\renderer\renderer.h" />
@@ -194,7 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="src\Shapes\shape.cpp" />
+    <ClCompile Include="src\shapes\shape.cpp" />
     <ClCompile Include="src\hyperion\hyperion.cpp" />
     <ClCompile Include="src\renderer\renderer.cpp" />
     <ClCompile Include="src\shader\shader.cpp" />
