@@ -3,34 +3,25 @@
 #include "GL/glew.h"
 #include "GLFW/glfw3.h"
 #include "glm/glm.hpp"
+#include "shape/shape.h"
 
 namespace Hyperion {
 	class HPR_API Renderer {
 	private:
-		struct Shape {
-			glm::vec3 pos;
-			float radius;
-			glm::vec3 color;
-			float padding;
-		};
-
-		struct ShapeData {
-			Shape shapes[128];
-			int size;
-		};
 
 		GLFWwindow* window;
 		bool exit = false;
-		int shaderProg = 0;
+		unsigned int shaderProg = 0;
 		unsigned int vao = 0, vbo = 0, ebo = 0;
 
-		unsigned int shader, shapesBlock;
-		ShapeData shapeData;
+		unsigned int shader = 0, shapesBlock = 0;
+		ShapeData* shapeData;
 	public:
-		Renderer(GLFWwindow* window);
-		virtual ~Renderer();
+		Renderer(GLFWwindow* window, ShapeData* shapes = nullptr);
+		void setShapeData(ShapeData* shapeData);
+		~Renderer();
 		void terminate();
-		bool Update();
+		bool update();
 	};
 
 }

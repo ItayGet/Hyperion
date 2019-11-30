@@ -1,6 +1,8 @@
 #pragma once
 #include "renderer/renderer.h"
 #include "initializer/initializer.h"
+#include "shape/shape.h"
+#include "shapemanager/shapemanager.h"
 #include <memory>
 
 namespace Hyperion {
@@ -8,6 +10,7 @@ namespace Hyperion {
 	private:
 		std::unique_ptr<Renderer> renderer;
 		std::unique_ptr<Initializer> initializer;
+		std::unique_ptr<ShapeManager> shapeManager;
 	public:
 		Hyperion(
 			const char* windowName,
@@ -16,8 +19,13 @@ namespace Hyperion {
 			bool &succ
 		);
 		~Hyperion();
-		bool Update();
+		void addShape(Shape shape);
+		void removeShape();
+		Shape getShape(int index);
+		void setShape(int index, Shape shape);
+		bool update();
 		void terminate();
+		
 	};
 }
 

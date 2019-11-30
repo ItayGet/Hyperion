@@ -15,6 +15,7 @@ namespace Hyperion {
 		Shader(const char* vert, const char* frag);
 		unsigned int addUniform(const char* name, unsigned int size, unsigned int usage);
 		static void updateUniform(unsigned int shader, unsigned int block, void* const data, unsigned int size);
+		static void updateUniformRange(unsigned int shader, unsigned int block, void* const data, unsigned int offset, unsigned int size);
 		unsigned int getShader();
 	};
 }

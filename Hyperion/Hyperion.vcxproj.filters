@@ -33,7 +33,13 @@
     <ClInclude Include="src\hyperion\hyperion.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\shapes\shape.h">
+    <ClInclude Include="src\shape\shape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shapedata\renderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shapemanager\shapemanager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,7 +59,13 @@
     <ClCompile Include="src\hyperion\hyperion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\shapes\shape.cpp">
+    <ClCompile Include="src\shape\shape.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shapedata\renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shapemanager\shapemanager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -9,7 +9,7 @@ namespace Hyperion {
 		GLFWwindow* window = NULL;
 	public:
 		Initializer(const char* windowName, int width, int height, bool& succ);
-		virtual ~Initializer();
+		~Initializer();
 		void terminate();
 		GLFWwindow* getWindow();
 	};

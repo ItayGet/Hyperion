@@ -1,17 +1,13 @@
 #include "renderer.h"
 #include "shader/shader.h"
+#include <iostream>
 
 #define VERTEX_FILE_PATH "shaders/example.vert"
 #define FRAGMENT_FILE_PATH "shaders/example.frag"
 
 namespace Hyperion {
-	//Renderer::Shape::Shape(glm::vec3 pos, float radius, glm::vec3 color) {
-	//	this->pos = pos;
-	//	this->radius = radius;
-	//	this->color = color;
-	//}
 
-	Renderer::Renderer(GLFWwindow* window) : window(window) {
+	Renderer::Renderer(GLFWwindow* window, ShapeData* shapes) : window(window) {
 		//Setting up vertices
 		float vertices[] = {
 			-1.0f, -1.0f, 0.0f,
@@ -28,20 +24,16 @@ namespace Hyperion {
 		//Shader stuff
 		Shader shader(VERTEX_FILE_PATH, FRAGMENT_FILE_PATH);
 
-		shapeData =
-		{
-			{
-				glm::vec3(0.5, 0., -5.), 1., glm::vec3(1., 0., 0.), 0.,
-				glm::vec3(0. , 0., -5), 1.2, glm::vec3(1., 1., 1.), 0.,
-				glm::vec3(-0.5, 0., -5), 1., glm::vec3(0., 0., 1.), 0.,
-			},
-			3
-		};
+		setShapeData(shapes);
 
-		shapesBlock = shader.addUniform("shape", sizeof(shapeData), GL_DYNAMIC_DRAW);
+		shapesBlock = shader.addUniform("shape", sizeof(*shapeData), GL_DYNAMIC_DRAW);
+
+		//std::cout << sizeof(shapeData->shapes)/sizeof(Shape) << std::endl;
+		//std::cout << shapeData->shapes[0].padding << std::endl;
+		//std::cout << shapeData->shapes[4].color.x;
 
 		shaderProg = shader.getShader();
-		Shader::updateUniform(shaderProg, shapesBlock, &shapeData, sizeof(shapeData));
+		Shader::updateUniform(shaderProg, shapesBlock, shapeData, sizeof(*shapeData));
 		glUseProgram(shaderProg);
 
 		//Handling vertex buffer objeccts and element buffer objects
@@ -65,7 +57,11 @@ namespace Hyperion {
 		glBindVertexArray(0);
 	}
 
-	bool Renderer::Update() {
+	void Renderer::setShapeData(ShapeData* shapeData) {
+		this->shapeData = shapeData;
+	}
+
+	bool Renderer::update() {
 		if (exit) {
 			terminate();
 			return false;
@@ -83,7 +79,7 @@ namespace Hyperion {
 		glBindVertexArray(vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
+		Shader::updateUniform(shader, shapesBlock, shapeData, sizeof(*shapeData));
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
