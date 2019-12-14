@@ -1,27 +1,4 @@
-﻿  hyperion.cpp
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,37): warning C4251:  'Hyperion::Hyperion::renderer': class 'std::unique_ptr<Hyperion::Renderer,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,37): warning C4251:         with
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,37): warning C4251:         [
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,37): warning C4251:             _Ty=Hyperion::Renderer
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,37): warning C4251:         ]
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :  see declaration of 'std::unique_ptr<Hyperion::Renderer,std::default_delete<_Ty>>'
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         with
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         [
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :             _Ty=Hyperion::Renderer
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         ]
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,43): warning C4251:  'Hyperion::Hyperion::initializer': class 'std::unique_ptr<Hyperion::Initializer,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,43): warning C4251:         with
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,43): warning C4251:         [
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,43): warning C4251:             _Ty=Hyperion::Initializer
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,43): warning C4251:         ]
-  renderer.cpp
-  shape.cpp
-  Generating Code...
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message :  see declaration of 'std::unique_ptr<Hyperion::Initializer,std::default_delete<_Ty>>'
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message :         with
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message :         [
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message :             _Ty=Hyperion::Initializer
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message :         ]
-     Creating library C:\Users\itayg\source\repos\Hyperion\x64\Debug\Hyperion.lib and object C:\Users\itayg\source\repos\Hyperion\x64\Debug\Hyperion.exp
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿  renderer.cpp
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\renderer\renderer.cpp(85,48): warning C4311: 'type cast': pointer truncation from 'unsigned int *' to 'unsigned int'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\renderer\renderer.cpp(85,48): warning C4302: 'type cast': truncation from 'unsigned int *' to 'unsigned int'
   Hyperion.vcxproj -> C:\Users\itayg\source\repos\Hyperion\x64\Debug\Hyperion.dll

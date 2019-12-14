@@ -83,7 +83,7 @@ namespace Hyperion {
 
 	void Shader::updateUniformRange(unsigned int shader, unsigned int block, void* const data, unsigned int offset, unsigned int size) {
 		glBindBuffer(GL_UNIFORM_BUFFER, block);
-		void* tempbuffer = glMapBufferRange(GL_UNIFORM_BUFFER, offset, size, GL_READ_WRITE);
+		void* tempbuffer = glMapBufferRange(GL_UNIFORM_BUFFER, offset, size, GL_MAP_WRITE_BIT);
 		memcpy(tempbuffer, data, size);
 		glUnmapBuffer(GL_UNIFORM_BUFFER);
 	}

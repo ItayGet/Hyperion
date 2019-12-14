@@ -28,15 +28,11 @@ namespace Hyperion {
 
 		shapesBlock = shader.addUniform("shape", sizeof(*shapeData), GL_DYNAMIC_DRAW);
 
-		//std::cout << sizeof(shapeData->shapes)/sizeof(Shape) << std::endl;
-		//std::cout << shapeData->shapes[0].padding << std::endl;
-		//std::cout << shapeData->shapes[4].color.x;
-
 		shaderProg = shader.getShader();
 		Shader::updateUniform(shaderProg, shapesBlock, shapeData, sizeof(*shapeData));
 		glUseProgram(shaderProg);
 
-		//Handling vertex buffer objeccts and element buffer objects
+		//Handling vertex buffer objects and element buffer objects
 		glGenBuffers(1, &vbo);
 		glGenBuffers(1, &ebo);
 		glGenVertexArrays(1, &vao);
@@ -61,26 +57,36 @@ namespace Hyperion {
 		this->shapeData = shapeData;
 	}
 
-	bool Renderer::update() {
+	bool Renderer::update(std::vector<unsigned int>& indexesToUpdate) {
 		if (exit) {
 			terminate();
 			return false;
 		}
 
-
-		//double counter = glfwGetTime();
-		//counter = counter > 5. ? counter - 5. : 0.;
-		//shapeData.shapes[0].pos = glm::vec3(0.5 - counter/4, 0., -5);
-		//Shader::updateUniform(shader, shapesBlock, &shapeData, sizeof(shapeData));
-
-		glClearColor(.0f, .0f, .0f, .0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-
+		//Draw triangles
 		glBindVertexArray(vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		Shader::updateUniform(shader, shapesBlock, shapeData, sizeof(*shapeData));
+		
+		//Update uniforms
+		for (int i = 0; i < indexesToUpdate.size(); i++) {
+			Shader::updateUniformRange(
+				shader, 
+				shapesBlock,
+				&(shapeData->shapes[i]),
+				(unsigned int)(indexesToUpdate[i]) * sizeof(Shape),
+				sizeof(Shape)
+			);
+		}
+		Shader::updateUniformRange(
+			shader,
+			shapesBlock,
+			&(shapeData->size),
+			(unsigned int)&(((ShapeData*)nullptr)->size),
+			sizeof(unsigned int)
+		);
 
+		//Swap buffers
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 

@@ -4,6 +4,7 @@
 #include "GLFW/glfw3.h"
 #include "glm/glm.hpp"
 #include "shape/shape.h"
+#include <vector>
 
 namespace Hyperion {
 	class HPR_API Renderer {
@@ -21,7 +22,7 @@ namespace Hyperion {
 		void setShapeData(ShapeData* shapeData);
 		~Renderer();
 		void terminate();
-		bool update();
+		bool update(std::vector<unsigned int>& indexesToUpdate);
 	};
 
 }

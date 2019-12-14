@@ -1,22 +1,10 @@
 ﻿  main.cpp
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,37): warning C4251:  'Hyperion::Hyperion::renderer': class 'std::unique_ptr<Hyperion::Renderer,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,37): warning C4251:         with
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,37): warning C4251:         [
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,37): warning C4251:             _Ty=Hyperion::Renderer
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10,37): warning C4251:         ]
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :  see declaration of 'std::unique_ptr<Hyperion::Renderer,std::default_delete<_Ty>>'
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         with
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         [
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :             _Ty=Hyperion::Renderer
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(10): message :         ]
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,43): warning C4251:  'Hyperion::Hyperion::initializer': class 'std::unique_ptr<Hyperion::Initializer,std::default_delete<_Ty>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,43): warning C4251:         with
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,43): warning C4251:         [
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,43): warning C4251:             _Ty=Hyperion::Initializer
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,43): warning C4251:         ]
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message :  see declaration of 'std::unique_ptr<Hyperion::Initializer,std::default_delete<_Ty>>'
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message :         with
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message :         [
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message :             _Ty=Hyperion::Initializer
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message :         ]
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shapemanager\shapemanager.h(10,34): warning C4251: 'Hyperion::ShapeManager::queue': class 'std::vector<unsigned int,std::allocator<unsigned int>>' needs to have dll-interface to be used by clients of class 'Hyperion::ShapeManager'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\renderer\renderer.h(25): message : see declaration of 'std::vector<unsigned int,std::allocator<unsigned int>>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11,37): warning C4251: 'Hyperion::Hyperion::renderer': class 'std::unique_ptr<Hyperion::Renderer,std::default_delete<Hyperion::Renderer>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(11): message : see declaration of 'std::unique_ptr<Hyperion::Renderer,std::default_delete<Hyperion::Renderer>>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(12,43): warning C4251: 'Hyperion::Hyperion::initializer': class 'std::unique_ptr<Hyperion::Initializer,std::default_delete<Hyperion::Initializer>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(12): message : see declaration of 'std::unique_ptr<Hyperion::Initializer,std::default_delete<Hyperion::Initializer>>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(13,45): warning C4251: 'Hyperion::Hyperion::shapeManager': class 'std::unique_ptr<Hyperion::ShapeManager,std::default_delete<Hyperion::ShapeManager>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(13): message : see declaration of 'std::unique_ptr<Hyperion::ShapeManager,std::default_delete<Hyperion::ShapeManager>>'
   Game.vcxproj -> C:\Users\itayg\source\repos\Hyperion\x64\Debug\Game.exe
