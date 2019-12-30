@@ -29,7 +29,7 @@ namespace Hyperion {
 		shapesBlock = shader.addUniform("shape", sizeof(*shapeData), GL_DYNAMIC_DRAW);
 
 		shaderProg = shader.getShader();
-		Shader::updateUniform(shaderProg, shapesBlock, shapeData, sizeof(*shapeData));
+		//Shader::updateUniform(shaderProg, shapesBlock, shapeData, sizeof(*shapeData));
 		glUseProgram(shaderProg);
 
 		//Handling vertex buffer objects and element buffer objects
@@ -77,6 +77,7 @@ namespace Hyperion {
 				(unsigned int)(indexesToUpdate[i]) * sizeof(Shape),
 				sizeof(Shape)
 			);
+
 		}
 		Shader::updateUniformRange(
 			shader,

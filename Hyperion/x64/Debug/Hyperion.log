@@ -1,4 +1,6 @@
-﻿  renderer.cpp
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\renderer\renderer.cpp(85,48): warning C4311: 'type cast': pointer truncation from 'unsigned int *' to 'unsigned int'
-C:\Users\itayg\source\repos\Hyperion\Hyperion\src\renderer\renderer.cpp(85,48): warning C4302: 'type cast': truncation from 'unsigned int *' to 'unsigned int'
+﻿  shape.cpp
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(11,16): warning C4251: 'Hyperion::Shape::pos': struct 'glm::vec<3,float,0>' needs to have dll-interface to be used by clients of struct 'Hyperion::Shape'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(418): message : see declaration of 'glm::vec<3,float,0>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(13,18): warning C4251: 'Hyperion::Shape::color': struct 'glm::vec<3,float,0>' needs to have dll-interface to be used by clients of struct 'Hyperion::Shape'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(418): message : see declaration of 'glm::vec<3,float,0>'
   Hyperion.vcxproj -> C:\Users\itayg\source\repos\Hyperion\x64\Debug\Hyperion.dll

@@ -33,7 +33,9 @@ namespace Hyperion {
 	}
 
 	bool Hyperion::update() {
-		return renderer->update(*shapeManager->getQueue());
+		bool succ = renderer->update(*shapeManager->getQueue());
+		shapeManager->clearQueue();
+		return succ;
 	}
 
 	void Hyperion::terminate() {
