@@ -3,6 +3,9 @@
 #define EPSILON .01
 #define MAX_SHAPES 128
 
+#define sphere 0
+#define rect 1
+
 struct Ray {
     vec3 pos;
     vec3 dir;
@@ -13,7 +16,7 @@ struct Shape {
 	vec3 pos;
     float radius;
 	vec3 color;
-	float padding;
+	int type;
 };
 
 struct RayHit {
@@ -46,10 +49,27 @@ Ray rayFromAngleEx(vec2 fragCoord, vec2 size, float fov) {
     float z = size.y / tan(radians(fov) / 2.0);
     return Ray(vec3(0.), normalize(vec3(xy, -z)), 0.);
 }
-    
-float sdf(Shape s, vec3 pos) {
-    return length(s.pos-pos) - s.radius;
+   
+float sdfRect(Shape s, vec3 pos) {
+  vec3 q = abs(s.pos - pos) - vec3(s.radius);
+  return length(max(q,0.0)) + min(max(q.x,max(q.y,q.z)),0.0);
 }
+   
+float sdfSphere(Shape s, vec3 pos) {
+	return length(s.pos-pos) - s.radius;
+}
+	
+float sdf(Shape s, vec3 pos) {
+	float sdf = sdfSphere(s, pos);
+	if(s.type == rect) {
+		sdf = sdfRect(s, pos);
+	}
+	return sdf;
+}
+
+// float sdf(Shape s, vec3 pos) {
+    // return length(s.pos-pos) - s.radius;
+// }
 
 RayHit sdfScene(vec3 pos) {
 	float prevsdf = MAX_DIST;
@@ -64,8 +84,13 @@ RayHit sdfScene(vec3 pos) {
     return RayHit(s, prevsdf);
 }
 
+// return the normal of the shape to the current position
 vec3 normal(Shape s, vec3 pos) {
-    return normalize(pos-s.pos);
+    return normalize(vec3(
+        sdf(s, pos + vec3(EPSILON,0,0)) - sdf(s, pos - vec3(EPSILON,0,0)),
+        sdf(s, pos + vec3(0,EPSILON,0)) - sdf(s, pos - vec3(0,EPSILON,0)),
+        sdf(s, pos + vec3(0,0,EPSILON)) - sdf(s, pos - vec3(0,0,EPSILON))
+   ));
 }
 
 vec3 rayMarch(Ray ray) {

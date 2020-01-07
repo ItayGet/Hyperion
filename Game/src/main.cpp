@@ -1,30 +1,35 @@
 #include "hpr.h"
 #include <iostream>
 
+namespace Hpr = Hyperion;
+
 int main(void) {
 	bool succ = false;
-	Hyperion::Hyperion a("Test", 640, 480, succ);
+	Hpr::Hyperion a("Test", 640, 480, succ);
 
 	if (succ) {
 		a.addShape(
 			{
 				{ 1., 0., -5. },
 				.25,
-				{.75, .75, .75}
+				{ .1, .5, 0. },
+				Hpr::ShapeType::Sphere
 			}
 		);
 		a.addShape(
 			{
 				{ .5, 0., -5. },
 				.25,
-				{.75, .75, .75}
+				{ 1., 0., 1. },
+				Hpr::ShapeType::Square
 			}
 		);		
 		a.addShape(
 			{
 				{ 0., 0., -5. },
 				.25,
-				{.5, .5, .5}
+				{ 0., .5, 1. },
+				Hpr::ShapeType::Sphere
 			}
 		);
 
