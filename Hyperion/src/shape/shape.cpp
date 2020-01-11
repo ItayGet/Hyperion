@@ -8,7 +8,7 @@ namespace Hyperion {
 		setType(type);
 	}
 
-	Shape::Shape() : pos(0), radius(0), color(0) {}
+	Shape::Shape() : pos(0), radius(0), color(0), type(0) {}
 
 	void Shape::setPos(glm::vec3 pos) { this->pos = pos; }
 	glm::vec3 Shape::getPos() { return pos; }

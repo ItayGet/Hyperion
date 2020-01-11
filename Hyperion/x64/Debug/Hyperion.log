@@ -18,6 +18,7 @@ C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(14,18): warning 
 C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(418): message : see declaration of 'glm::vec<3,float,0>'
 C:\Users\itayg\source\repos\Hyperion\Hyperion\src\renderer\renderer.cpp(86,48): warning C4311: 'type cast': pointer truncation from 'unsigned int *' to 'unsigned int'
 C:\Users\itayg\source\repos\Hyperion\Hyperion\src\renderer\renderer.cpp(86,48): warning C4302: 'type cast': truncation from 'unsigned int *' to 'unsigned int'
+  shader.cpp
   shape.cpp
 C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(12,16): warning C4251: 'Hyperion::Shape::pos': struct 'glm::vec<3,float,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
 C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(418): message : see declaration of 'glm::vec<3,float,0>'
@@ -31,4 +32,6 @@ C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(418):
 C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shapemanager\shapemanager.h(10,34): warning C4251: 'Hyperion::ShapeManager::queue': class 'std::vector<unsigned int,std::allocator<unsigned int>>' needs to have dll-interface to be used by clients of class 'Hyperion::ShapeManager'
 C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shapemanager\shapemanager.h(10): message : see declaration of 'std::vector<unsigned int,std::allocator<unsigned int>>'
   Generating Code...
+     Creating library C:\Users\itayg\source\repos\Hyperion\x64\Debug\Hyperion.lib and object C:\Users\itayg\source\repos\Hyperion\x64\Debug\Hyperion.exp
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Hyperion.vcxproj -> C:\Users\itayg\source\repos\Hyperion\x64\Debug\Hyperion.dll

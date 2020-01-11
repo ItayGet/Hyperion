@@ -7,6 +7,8 @@
 #include <sstream>
 
 namespace Hyperion {
+	unsigned int Shader::uniformIndex = 0;
+
 	Shader::Shader(const char* vert, const char* frag) {
 		unsigned int vertexShader = createShader(vert, GL_VERTEX_SHADER);
 		unsigned int fragmentShader = createShader(frag, GL_FRAGMENT_SHADER);
