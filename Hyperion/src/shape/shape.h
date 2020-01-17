@@ -7,12 +7,14 @@ namespace Hyperion {
 		Sphere = 0,
 		Square = 1
 	};
+
 	class HPR_API Shape {
 	private:
-		glm::vec3 pos;
+		glm::mat4 transform;
+		glm::vec4 color;
 		float radius;
-		glm::vec3 color;
 		int type;
+		float padding[2];
 
 		//glm::vec3 pos;
 		//glm::vec3 rotation;
@@ -21,18 +23,18 @@ namespace Hyperion {
 		//ShapeType type;
 		//Texture texture;
 	public:
-		Shape(glm::vec3 pos, float radius, glm::vec3 color, ShapeType type);
+		Shape(glm::mat4 transform, glm::vec4 color, float radius, ShapeType type);
 		Shape();
 
 		// Setters and getters
-		void setPos(glm::vec3 pos);
-		glm::vec3 getPos();
+		void setTransform(glm::mat4 transform);
+		glm::mat4 getTransform();
 
 		void setRadius(float radius);
 		float getRadius();
 
-		void setColor(glm::vec3 color);
-		glm::vec3 getColor();
+		void setColor(glm::vec4 color);
+		glm::vec4 getColor();
 
 		void setType(ShapeType type);
 		ShapeType getType();

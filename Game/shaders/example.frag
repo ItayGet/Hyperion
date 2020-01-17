@@ -13,9 +13,9 @@ struct Ray {
 };
 
 struct Shape {
-	vec3 pos;
+	mat4 transform;
+	vec4 color;
     float radius;
-	vec3 color;
 	int type;
 };
 
@@ -28,20 +28,12 @@ out vec4 fragColor;
 
 layout (std140) uniform shape {
 	Shape shapes[MAX_SHAPES];
-	int shapesSize;
+	uint shapesSize;
 };
-    
-Ray rayFromAngle(vec2 angles) {
-    vec2 sinF = sin(angles);
-    vec2 cosF = cos(angles);
-    vec3 dir = vec3(
-        sinF.y * cosF.x,
-        sinF.y * sinF.x,
-        cosF.y
-    );
-    
-    //ray pos is where the camera is
-    return Ray(vec3(0.), dir, 0.);
+
+vec3 transformVec(mat4 mat, vec3 vec) {
+	vec4 v4 = vec4(vec, 1.);
+	return (mat * v4).xyz;
 }
 
 Ray rayFromAngleEx(vec2 fragCoord, vec2 size, float fov) {
@@ -51,18 +43,21 @@ Ray rayFromAngleEx(vec2 fragCoord, vec2 size, float fov) {
 }
    
 float sdfRect(Shape s, vec3 pos) {
-  vec3 q = abs(s.pos - pos) - vec3(s.radius);
+  vec3 q = abs(pos) - vec3(s.radius);
   return length(max(q,0.0)) + min(max(q.x,max(q.y,q.z)),0.0);
 }
    
 float sdfSphere(Shape s, vec3 pos) {
-	return length(s.pos-pos) - s.radius;
+	return length(pos) - s.radius;
 }
 	
 float sdf(Shape s, vec3 pos) {
-	float sdf = sdfSphere(s, pos);
+	pos = transformVec(s.transform, pos);
+	float sdf;
 	if(s.type == rect) {
 		sdf = sdfRect(s, pos);
+	} else {
+		sdf = sdfSphere(s, pos);
 	}
 	return sdf;
 }
@@ -74,7 +69,7 @@ float sdf(Shape s, vec3 pos) {
 RayHit sdfScene(vec3 pos) {
 	float prevsdf = MAX_DIST;
 	Shape s;
-	for(int i = 0; i < shapesSize; i++) {
+	for(uint i = 0u; i < shapesSize; i++) {
 		float sdf = sdf(shapes[i], pos);
 		if(sdf < prevsdf) {
 			s = shapes[i];
@@ -97,15 +92,13 @@ vec3 rayMarch(Ray ray) {
     while(ray.dist <= MAX_DIST) {
         RayHit rayHit = sdfScene(ray.pos);
         if(rayHit.dist <= EPSILON) {
-			
-			
             vec3 lightPos = vec3(0., 5., 0.);
             vec3 lightDir =  normalize(lightPos - ray.pos);
             
             float doot = dot(lightDir, normal(rayHit.shape, ray.pos));
             doot /= 2.;
             doot += .5;
-            return rayHit.shape.color*doot;
+            return rayHit.shape.color.xyz*doot;
         }
         ray.dist += rayHit.dist;
         ray.pos += rayHit.dist * ray.dir;
