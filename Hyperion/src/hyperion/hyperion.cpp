@@ -16,21 +16,13 @@ namespace Hyperion {
 		terminate();
 	}
 
-	void Hyperion::addShape(Shape shape) {
-		shapeManager->addShape(shape);
+	GameObject Hyperion::addShape() {
+		return shapeManager->addShape();
 	}
 
-	void Hyperion::removeShape() {
-		shapeManager->removeShape();
-	}
-
-	Shape Hyperion::getShape(int index) {
-		return shapeManager->getShape(index);
-	}
-
-	void Hyperion::setShape(int index, Shape shape) {
-		shapeManager->setShape(index, shape);
-	}
+	//void Hyperion::removeShape() {
+	//	
+	//}
 
 	bool Hyperion::update() {
 		bool succ = renderer->update(*shapeManager->getQueue());

@@ -184,6 +184,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\gameobject\gameobject.h" />
     <ClInclude Include="src\shapemanager\shapemanager.h" />
     <ClInclude Include="src\hyperion\hyperion.h" />
     <ClInclude Include="src\api.h" />
@@ -195,6 +196,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="src\gameobject\gameobject.cpp" />
     <ClCompile Include="src\shapemanager\shapemanager.cpp" />
     <ClCompile Include="src\hyperion\hyperion.cpp" />
     <ClCompile Include="src\renderer\renderer.cpp" />

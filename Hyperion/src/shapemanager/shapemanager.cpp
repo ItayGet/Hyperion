@@ -1,4 +1,5 @@
 #include "shapemanager.h"
+#include "gameobject/gameobject.h"
 #include <algorithm>
 
 namespace Hyperion {
@@ -16,34 +17,24 @@ namespace Hyperion {
 
 	}
 
-	void ShapeManager::setShapes(ShapeData shapes) {
-		this->shapes = shapes;
-	}
-
 	ShapeData* ShapeManager::getShapes() {
 		return &shapes;
 	}
 
-	void ShapeManager::addShape(Shape shape) {
-		setShape(shapes.size++, shape);
+	GameObject ShapeManager::addShape() {
+		GameObject go{};
+		go._wireSm(this, shapes.size++);
+		return go;
 	}
 
-	void ShapeManager::removeShape() {
-		shapes.size--;
-	}
-
-	Shape ShapeManager::getShape(int index) {
-		return shapes.shapes[index];
-	}
-
-	void ShapeManager::setShape(int index, Shape shape) {
-		shapes.shapes[index] = shape;
-		addQueue(index);
-	}
+	//void ShapeManager::removeShape(GameObject go) {
+	//	shapes.size--;
+	//}
 
 	std::vector<unsigned int>* ShapeManager::getQueue() {
 		return &queue;
 	}
+
 	void ShapeManager::clearQueue() {
 		queue.clear();
 	}

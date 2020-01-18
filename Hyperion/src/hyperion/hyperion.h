@@ -3,6 +3,7 @@
 #include "initializer/initializer.h"
 #include "shape/shape.h"
 #include "shapemanager/shapemanager.h"
+#include "gameobject/gameobject.h"
 #include <memory>
 
 namespace Hyperion {
@@ -19,10 +20,8 @@ namespace Hyperion {
 			bool &succ
 		);
 		~Hyperion();
-		void addShape(Shape shape);
-		void removeShape();
-		Shape getShape(int index);
-		void setShape(int index, Shape shape);
+		GameObject addShape();
+		void removeShape(GameObject go);
 		bool update();
 		void terminate();
 		

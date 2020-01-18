@@ -1,5 +1,5 @@
 #version 330 core
-#define MAX_DIST 10.
+#define MAX_DIST 50.
 #define EPSILON .01
 #define MAX_SHAPES 128
 
@@ -127,6 +127,27 @@ void main()
     // Time varying pixel color
     vec3 col = rayMarch(ray);
     //col = ray.dir;
+	
+	/*
+	Shape s = shapes[0];
+	if(uv.x > 0) {
+		if (uv.y > 0) {
+			col = vec3(s.type);
+		} else {
+			col = s.color.xyz;
+		}
+	} else {
+		if (uv.y > 0) {
+			if (uv.y > .25) {
+				col = vec3(s.radius);
+			} else {
+				col = vec3(shapesSize);
+			}
+		} else {
+			col = transformVec(s.transform, vec3(0., 0., 0.));
+		}
+	}
+	*/
 	
     // Output to screen
     fragColor = vec4(col,1.0);
