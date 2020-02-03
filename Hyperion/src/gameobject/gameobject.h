@@ -10,7 +10,7 @@ namespace Hyperion {
 		unsigned int index;
 		Shape& getShape();
 		void informUpdate();
-		void multiplyByMat(glm::mat4 mat);
+		void multiplyByMat(const glm::mat4& mat);
 
 	public:
 		GameObject();
