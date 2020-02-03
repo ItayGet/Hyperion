@@ -1,9 +1,6 @@
 #include "gameobject.h"
 #include "glm/gtx/transform.hpp"
 
-#include <iostream>
-#include "glm/gtx/string_cast.hpp"
-
 namespace Hyperion {
 	Shape& GameObject::getShape() {
 		return (sm->getShapes()->shapes)[index];
@@ -18,6 +15,12 @@ namespace Hyperion {
 		informUpdate();
 		glm::mat4 newTrans = getShape().getTransform() * mat;
 		getShape().setTransform(newTrans);
+	}
+
+	void GameObject::clearTranslation() {
+		auto trans = getTransform();
+		trans[3] = glm::vec4(glm::vec3(0.), 1.);
+		setTranform(trans);
 	}
 
 	GameObject::GameObject() {}
@@ -65,16 +68,12 @@ namespace Hyperion {
 
 	// Rotate along origin of shape
 	void GameObject::rotate(const glm::vec3& axis, float angle) {
-		//TODO: change when changing setters/getters to refrences
+		auto pos = getTranslation();
+		clearTranslation();
 
 		auto trans = getTransform();
 
-		glm::vec3 pos = glm::vec3(glm::inverse(trans) * glm::vec4(glm::vec3(0.), 1.)) * -1.f;
-
-		trans[3] = glm::vec4(glm::vec3(0.), 1.);
-
 		trans = glm::rotate(trans, angle, axis);
-
 		trans = glm::translate(trans, pos);
 
 		setTranform(trans);
@@ -82,5 +81,14 @@ namespace Hyperion {
 
 	void GameObject::translate(const glm::vec3& point) {
 		multiplyByMat(glm::translate(glm::mat4(1.), point));
+	}
+
+	glm::vec3 GameObject::getTranslation() {
+		return glm::vec3(glm::inverse(getTransform()) * glm::vec4(glm::vec3(0.), 1.)) * -1.f;
+	}
+
+	void GameObject::setTranslation(const glm::vec3& translation) {
+		clearTranslation();
+		translate(translation);
 	}
 }

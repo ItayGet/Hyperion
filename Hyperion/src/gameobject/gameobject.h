@@ -11,6 +11,7 @@ namespace Hyperion {
 		Shape& getShape();
 		void informUpdate();
 		void multiplyByMat(const glm::mat4& mat);
+		void clearTranslation();
 
 	public:
 		GameObject();
@@ -30,5 +31,8 @@ namespace Hyperion {
 
 		void rotate(const glm::vec3& axis, float angle);
 		void translate(const glm::vec3& point);
+
+		glm::vec3 getTranslation();
+		void setTranslation(const glm::vec3& translation);
 	};
 }
