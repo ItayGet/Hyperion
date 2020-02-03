@@ -15,7 +15,7 @@ int main(void) {
 		go.setColor(glm::vec3(1., 1., 0.));
 		go.setRadius(.5);
 		go.setTranform(trans);
-		go.translate(glm::vec3(-.5, 1., 10.));
+		go.setTranslation(glm::vec3(-.5, 0., 10.));
 		go.rotate(glm::vec3(0., 1., 0.), glm::radians(10.f));
 
 		auto go1 = a.addShape();

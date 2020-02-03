@@ -17,17 +17,15 @@ namespace Hyperion {
 		getShape().setTransform(newTrans);
 	}
 
-	void GameObject::clearTranslation() {
-		auto trans = getTransform();
-		trans[3] = glm::vec4(glm::vec3(0.), 1.);
-		setTranform(trans);
-	}
-
-	GameObject::GameObject() {}
+	GameObject::GameObject() : sm(nullptr), index(-1) {}
 
 	void GameObject::_wireSm(ShapeManager* sm, unsigned int index) {
 		this->sm = sm;
 		this->index = index;
+	}
+
+	void GameObject::clearTranslation(glm::mat4& mat) {
+		mat[3] = glm::vec4(glm::vec3(0.), 1.);
 	}
 
 	const glm::mat4& GameObject::getTransform() {
@@ -69,9 +67,10 @@ namespace Hyperion {
 	// Rotate along origin of shape
 	void GameObject::rotate(const glm::vec3& axis, float angle) {
 		auto pos = getTranslation();
-		clearTranslation();
-
 		auto trans = getTransform();
+
+		//ugly, but it works
+		clearTranslation((glm::mat4&)trans);
 
 		trans = glm::rotate(trans, angle, axis);
 		trans = glm::translate(trans, pos);
@@ -88,7 +87,20 @@ namespace Hyperion {
 	}
 
 	void GameObject::setTranslation(const glm::vec3& translation) {
-		clearTranslation();
+		//ugly, but it works
+		clearTranslation((glm::mat4&)getTransform());
 		translate(translation);
+	}
+
+	glm::mat4 GameObject::getRotation() {
+		glm::mat4 tmp = getTransform();
+		clearTranslation(tmp);
+		return tmp;
+	}
+
+	void GameObject::setRotation(const glm::mat4& rotation) {
+		glm::vec3 pos = getTranslation();
+		setTranform(rotation);
+		setTranslation(pos);
 	}
 }

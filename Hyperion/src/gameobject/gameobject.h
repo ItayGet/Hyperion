@@ -11,11 +11,13 @@ namespace Hyperion {
 		Shape& getShape();
 		void informUpdate();
 		void multiplyByMat(const glm::mat4& mat);
-		void clearTranslation();
 
 	public:
+
 		GameObject();
 		void _wireSm(ShapeManager* sm, unsigned int index);
+
+		void clearTranslation(glm::mat4& mat);
 
 		const glm::mat4& getTransform();
 		void setTranform(const glm::mat4& transform);
@@ -34,5 +36,8 @@ namespace Hyperion {
 
 		glm::vec3 getTranslation();
 		void setTranslation(const glm::vec3& translation);
+
+		glm::mat4 getRotation();
+		void setRotation(const glm::mat4& rotation);
 	};
 }
