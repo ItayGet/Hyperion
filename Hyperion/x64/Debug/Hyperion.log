@@ -5,6 +5,40 @@ C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(14,18): warning 
 C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<4,float,0>'
 C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shapemanager\shapemanager.h(12,34): warning C4251: 'Hyperion::ShapeManager::queue': class 'std::vector<unsigned int,std::allocator<unsigned int>>' needs to have dll-interface to be used by clients of class 'Hyperion::ShapeManager'
 C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shapemanager\shapemanager.h(12): message : see declaration of 'std::vector<unsigned int,std::allocator<unsigned int>>'
+  hyperion.cpp
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(13,22): warning C4251: 'Hyperion::Shape::transform': struct 'glm::mat<4,4,glm::f32,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(518): message : see declaration of 'glm::mat<4,4,glm::f32,0>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(14,18): warning C4251: 'Hyperion::Shape::color': struct 'glm::vec<4,float,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<4,float,0>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shapemanager\shapemanager.h(12,34): warning C4251: 'Hyperion::ShapeManager::queue': class 'std::vector<unsigned int,std::allocator<unsigned int>>' needs to have dll-interface to be used by clients of class 'Hyperion::ShapeManager'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\renderer\renderer.h(25): message : see declaration of 'std::vector<unsigned int,std::allocator<unsigned int>>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(12,37): warning C4251: 'Hyperion::Hyperion::renderer': class 'std::unique_ptr<Hyperion::Renderer,std::default_delete<Hyperion::Renderer>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(12): message : see declaration of 'std::unique_ptr<Hyperion::Renderer,std::default_delete<Hyperion::Renderer>>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(13,43): warning C4251: 'Hyperion::Hyperion::initializer': class 'std::unique_ptr<Hyperion::Initializer,std::default_delete<Hyperion::Initializer>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(13): message : see declaration of 'std::unique_ptr<Hyperion::Initializer,std::default_delete<Hyperion::Initializer>>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(14,45): warning C4251: 'Hyperion::Hyperion::shapeManager': class 'std::unique_ptr<Hyperion::ShapeManager,std::default_delete<Hyperion::ShapeManager>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\hyperion\hyperion.h(14): message : see declaration of 'std::unique_ptr<Hyperion::ShapeManager,std::default_delete<Hyperion::ShapeManager>>'
+  renderer.cpp
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(13,22): warning C4251: 'Hyperion::Shape::transform': struct 'glm::mat<4,4,glm::f32,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(518): message : see declaration of 'glm::mat<4,4,glm::f32,0>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(14,18): warning C4251: 'Hyperion::Shape::color': struct 'glm::vec<4,float,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<4,float,0>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\renderer\renderer.cpp(86,48): warning C4311: 'type cast': pointer truncation from 'unsigned int *' to 'unsigned int'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\renderer\renderer.cpp(86,48): warning C4302: 'type cast': truncation from 'unsigned int *' to 'unsigned int'
+  shape.cpp
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(13,22): warning C4251: 'Hyperion::Shape::transform': struct 'glm::mat<4,4,glm::f32,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(518): message : see declaration of 'glm::mat<4,4,glm::f32,0>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(14,18): warning C4251: 'Hyperion::Shape::color': struct 'glm::vec<4,float,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<4,float,0>'
+  shapemanager.cpp
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(13,22): warning C4251: 'Hyperion::Shape::transform': struct 'glm::mat<4,4,glm::f32,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(518): message : see declaration of 'glm::mat<4,4,glm::f32,0>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shape\shape.h(14,18): warning C4251: 'Hyperion::Shape::color': struct 'glm::vec<4,float,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<4,float,0>'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shapemanager\shapemanager.h(12,34): warning C4251: 'Hyperion::ShapeManager::queue': class 'std::vector<unsigned int,std::allocator<unsigned int>>' needs to have dll-interface to be used by clients of class 'Hyperion::ShapeManager'
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\shapemanager\shapemanager.h(12): message : see declaration of 'std::vector<unsigned int,std::allocator<unsigned int>>'
+  Generating Code...
+C:\Users\itayg\source\repos\Hyperion\Hyperion\src\gameobject\gameobject.cpp(40): warning C4172: returning address of local variable or temporary
      Creating library C:\Users\itayg\source\repos\hyperion\x64\Debug\Hyperion.lib and object C:\Users\itayg\source\repos\hyperion\x64\Debug\Hyperion.exp
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
 initializer.obj : warning LNK4099: PDB 'vc142.pdb' was not found with 'initializer.obj' or at 'C:\Users\itayg\source\repos\hyperion\x64\Debug\vc142.pdb'; linking object as if no debug info

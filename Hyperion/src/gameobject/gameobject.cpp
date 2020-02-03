@@ -27,20 +27,20 @@ namespace Hyperion {
 		this->index = index;
 	}
 
-	glm::mat4 GameObject::getTransform() {
+	const glm::mat4& GameObject::getTransform() {
 		return getShape().getTransform();
 	}
 
-	void GameObject::setTranform(glm::mat4 transform) {
+	void GameObject::setTranform(const glm::mat4& transform) {
 		informUpdate();
 		getShape().setTransform(transform);
 	}
 
-	glm::vec3 GameObject::getColor() {
+	const glm::vec3& GameObject::getColor() {
 		return getShape().getColor();
 	}
 
-	void GameObject::setColor(glm::vec3 color) {
+	void GameObject::setColor(const glm::vec3& color) {
 		informUpdate();
 		getShape().setColor(glm::vec4(color, 1.));
 	}
@@ -64,7 +64,7 @@ namespace Hyperion {
 	}
 
 	// Rotate along origin of shape
-	void GameObject::rotate(glm::vec3 axis, float angle) {
+	void GameObject::rotate(const glm::vec3& axis, float angle) {
 		//TODO: change when changing setters/getters to refrences
 
 		auto trans = getTransform();
@@ -80,7 +80,7 @@ namespace Hyperion {
 		setTranform(trans);
 	}
 
-	void GameObject::translate(glm::vec3 point) {
+	void GameObject::translate(const glm::vec3& point) {
 		multiplyByMat(glm::translate(glm::mat4(1.), point));
 	}
 }

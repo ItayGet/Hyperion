@@ -27,14 +27,14 @@ namespace Hyperion {
 		Shape();
 
 		// Setters and getters
-		void setTransform(glm::mat4 transform);
-		glm::mat4 getTransform();
+		void setTransform(const glm::mat4& transform);
+		const glm::mat4& getTransform();
 
 		void setRadius(float radius);
 		float getRadius();
 
-		void setColor(glm::vec4 color);
-		glm::vec4 getColor();
+		void setColor(const glm::vec4& color);
+		const glm::vec4& getColor();
 
 		void setType(ShapeType type);
 		ShapeType getType();

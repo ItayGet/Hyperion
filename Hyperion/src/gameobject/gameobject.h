@@ -16,11 +16,11 @@ namespace Hyperion {
 		GameObject();
 		void _wireSm(ShapeManager* sm, unsigned int index);
 
-		glm::mat4 getTransform();
-		void setTranform(glm::mat4 transform);
+		const glm::mat4& getTransform();
+		void setTranform(const glm::mat4& transform);
 
-		glm::vec3 getColor();
-		void setColor(glm::vec3 color);
+		const glm::vec3& getColor();
+		void setColor(const glm::vec3& color);
 
 		float getRadius();
 		void setRadius(float radius);
@@ -28,7 +28,7 @@ namespace Hyperion {
 		ShapeType getType();
 		void setType(ShapeType type);
 
-		void rotate(glm::vec3 axis, float angle);
-		void translate(glm::vec3 point);
+		void rotate(const glm::vec3& axis, float angle);
+		void translate(const glm::vec3& point);
 	};
 }
