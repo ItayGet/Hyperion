@@ -193,6 +193,7 @@
     <ClInclude Include="src\initializer\initializer.h" />
     <ClInclude Include="src\hpr.h" />
     <ClInclude Include="src\shape\shape.h" />
+    <ClInclude Include="src\transformation\transformation.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
@@ -203,6 +204,7 @@
     <ClCompile Include="src\shader\shader.cpp" />
     <ClCompile Include="src\initializer\initializer.cpp" />
     <ClCompile Include="src\shape\shape.cpp" />
+    <ClCompile Include="src\transformation\transformation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

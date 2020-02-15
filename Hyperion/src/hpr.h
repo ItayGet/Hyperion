@@ -4,4 +4,5 @@
 #include "shader/shader.h"
 #include "hyperion/hyperion.h"
 #include "shape/shape.h"
+#include "transformation/transformation.h"
 #include "gameobject/gameobject.h"

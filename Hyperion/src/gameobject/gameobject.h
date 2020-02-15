@@ -1,5 +1,6 @@
 #pragma once
 #include "api.h"
+#include "transformation/transformation.h"
 #include "shapemanager/shapemanager.h"
 #include "shape/shape.h"
 
@@ -10,7 +11,7 @@ namespace Hyperion {
 		unsigned int index;
 		Shape& getShape();
 		void informUpdate();
-		void multiplyByMat(const glm::mat4& mat);
+		Transformation& getTransformation();
 
 	public:
 
