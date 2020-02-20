@@ -1,4 +1,6 @@
 #pragma once
+#include "keyprops/keycode.h"
+#include "keyprops/keystate.h"
 #include "renderer/renderer.h"
 #include "initializer/initializer.h"
 #include "shape/shape.h"
@@ -20,11 +22,14 @@ namespace Hyperion {
 			bool &succ
 		);
 		~Hyperion();
+
 		GameObject addShape();
 		void removeShape(GameObject go);
+
+		KeyState getKeyState(KeyCode key);
+
 		bool update();
 		void terminate();
-		
 	};
 }
 

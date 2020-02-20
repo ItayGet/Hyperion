@@ -45,6 +45,12 @@
     <ClInclude Include="src\transformation\transformation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\keyprops\keycode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\keyprops\keystate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

@@ -185,6 +185,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\gameobject\gameobject.h" />
+    <ClInclude Include="src\keyprops\keycode.h" />
+    <ClInclude Include="src\keyprops\keystate.h" />
     <ClInclude Include="src\shapemanager\shapemanager.h" />
     <ClInclude Include="src\hyperion\hyperion.h" />
     <ClInclude Include="src\api.h" />

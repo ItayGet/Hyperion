@@ -20,9 +20,14 @@ namespace Hyperion {
 		return shapeManager->addShape();
 	}
 
+	//TODO:
 	//void Hyperion::removeShape() {
 	//	
 	//}
+
+	KeyState Hyperion::getKeyState(KeyCode key) {
+		return (KeyState)(glfwGetKey(initializer->getWindow(), (int)key));
+	}
 
 	bool Hyperion::update() {
 		bool succ = renderer->update(*shapeManager->getQueue());
