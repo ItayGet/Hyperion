@@ -1,15 +1,20 @@
 #include "hyperion.h"
 
 namespace Hyperion {
+
 	Hyperion::Hyperion(
 		const char* windowName,
 		int width,
 		int height,
-		bool& succ
+		bool& succ,
+		GLFWwindow*& window
 	) {
 		initializer = std::unique_ptr<Initializer>(new Initializer(windowName, width, height, succ));
+
+		window = initializer->getWindow();
+
 		shapeManager = std::unique_ptr<ShapeManager>(new ShapeManager());
-		renderer = std::unique_ptr<Renderer>(new Renderer(initializer->getWindow(), shapeManager->getShapes()));
+		renderer = std::unique_ptr<Renderer>(new Renderer(window, shapeManager->getShapes()));
 	}
 
 	Hyperion::~Hyperion() {
@@ -25,10 +30,6 @@ namespace Hyperion {
 	//	
 	//}
 
-	KeyState Hyperion::getKeyState(KeyCode key) {
-		return (KeyState)(glfwGetKey(initializer->getWindow(), (int)key));
-	}
-
 	bool Hyperion::update() {
 		bool succ = renderer->update(*shapeManager->getQueue());
 		shapeManager->clearQueue();
@@ -36,6 +37,7 @@ namespace Hyperion {
 	}
 
 	void Hyperion::terminate() {
+
 		initializer->terminate();
 		renderer->terminate();
 	}

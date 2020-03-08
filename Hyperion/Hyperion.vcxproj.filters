@@ -51,6 +51,9 @@
     <ClInclude Include="src\keyprops\keystate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\eventhandler\eventhandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -78,6 +81,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\transformation\transformation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\eventhandler\eventhandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

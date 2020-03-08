@@ -11,7 +11,6 @@ namespace Hyperion {
 		ShapeData shapes;
 		std::vector<unsigned int> queue;
 	public:
-
 		ShapeManager();
 		~ShapeManager();
 		void addQueue(unsigned int index);

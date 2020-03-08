@@ -6,3 +6,4 @@
 #include "shape/shape.h"
 #include "transformation/transformation.h"
 #include "gameobject/gameobject.h"
+#include "eventhandler/eventhandler.h"

@@ -184,6 +184,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\eventhandler\eventhandler.h" />
     <ClInclude Include="src\gameobject\gameobject.h" />
     <ClInclude Include="src\keyprops\keycode.h" />
     <ClInclude Include="src\keyprops\keystate.h" />
@@ -199,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="src\eventhandler\eventhandler.cpp" />
     <ClCompile Include="src\gameobject\gameobject.cpp" />
     <ClCompile Include="src\shapemanager\shapemanager.cpp" />
     <ClCompile Include="src\hyperion\hyperion.cpp" />

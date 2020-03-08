@@ -5,7 +5,7 @@
 namespace Hyperion {
 	void ShapeManager::addQueue(unsigned int index) {
 		if (std::find(queue.begin(), queue.end(), index) == queue.end()) {
-			queue.push_back(index);
+ 			queue.push_back(index);
 		}
 	}
 

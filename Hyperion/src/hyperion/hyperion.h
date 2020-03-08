@@ -1,6 +1,4 @@
 #pragma once
-#include "keyprops/keycode.h"
-#include "keyprops/keystate.h"
 #include "renderer/renderer.h"
 #include "initializer/initializer.h"
 #include "shape/shape.h"
@@ -14,22 +12,23 @@ namespace Hyperion {
 		std::unique_ptr<Renderer> renderer;
 		std::unique_ptr<Initializer> initializer;
 		std::unique_ptr<ShapeManager> shapeManager;
+
 	public:
 		Hyperion(
 			const char* windowName,
 			int width,
 			int height,
-			bool &succ
+			bool& succ,
+			GLFWwindow*& window
 		);
 		~Hyperion();
 
 		GameObject addShape();
 		void removeShape(GameObject go);
 
-		KeyState getKeyState(KeyCode key);
-
 		bool update();
 		void terminate();
 	};
 }
+
 

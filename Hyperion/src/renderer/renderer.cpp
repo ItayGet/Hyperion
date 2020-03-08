@@ -32,7 +32,7 @@ namespace Hyperion {
 		//Shader::updateUniform(shaderProg, shapesBlock, shapeData, sizeof(*shapeData));
 		glUseProgram(shaderProg);
 
-		//Handling vertex buffer objects and element buffer objects
+		// Handling vertex buffer objects and element buffer objects
 		glGenBuffers(1, &vbo);
 		glGenBuffers(1, &ebo);
 		glGenVertexArrays(1, &vao);
@@ -63,15 +63,18 @@ namespace Hyperion {
 			return false;
 		}
 
-		//Draw triangles
+		// Draw triangles
 		glBindVertexArray(vao);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+		// Poll Events
+		glfwPollEvents();
 		
-		//Update uniforms
+		// Update uniforms
 		for (int i = 0; i < indexesToUpdate.size(); i++) {
 			Shader::updateUniformRange(
-				shader, 
+				shader,
 				shapesBlock,
 				&(shapeData->shapes[i]),
 				(unsigned int)(indexesToUpdate[i]) * sizeof(Shape),
@@ -87,9 +90,8 @@ namespace Hyperion {
 			sizeof(unsigned int)
 		);
 
-		//Swap buffers
+		// Swap buffers
 		glfwSwapBuffers(window);
-		glfwPollEvents();
 
 		return true;
 	}
