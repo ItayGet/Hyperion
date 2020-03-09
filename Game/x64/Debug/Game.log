@@ -13,4 +13,5 @@ C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(13,43): wa
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(13): message : see declaration of 'std::unique_ptr<Hyperion::Initializer,std::default_delete<Hyperion::Initializer>>'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(14,45): warning C4251: 'Hyperion::Hyperion::shapeManager': class 'std::unique_ptr<Hyperion::ShapeManager,std::default_delete<Hyperion::ShapeManager>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(14): message : see declaration of 'std::unique_ptr<Hyperion::ShapeManager,std::default_delete<Hyperion::ShapeManager>>'
+C:\Users\itayg\source\repos\hyperion\Game\src\main.cpp(55,60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Game.vcxproj -> C:\Users\itayg\source\repos\hyperion\x64\Debug\Game.exe

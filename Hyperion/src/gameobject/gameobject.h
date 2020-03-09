@@ -33,6 +33,7 @@ namespace Hyperion {
 		void setType(ShapeType type);
 
 		void rotate(const glm::vec3& axis, float angle);
+		void rotateAxes(const glm::vec3& axis, float angle);
 		void translate(const glm::vec3& point);
 
 		glm::vec3 getTranslation();

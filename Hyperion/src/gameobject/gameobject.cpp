@@ -68,6 +68,12 @@ namespace Hyperion {
 		getTransformation().rotate(axis, angle);
 	}
 
+	// Rotate along axes
+	void GameObject::rotateAxes(const glm::vec3& axis, float angle) {
+		informUpdate();
+		getTransformation().rotateAxes(axis, angle);
+	}
+
 	void GameObject::translate(const glm::vec3& point) {
 		informUpdate();
 		getTransformation().translate(point);

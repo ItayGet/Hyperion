@@ -23,6 +23,7 @@ namespace Hyperion {
 		);
 		~EventHandler();
 
+		void getMousePos(glm::dvec2& pos);
 		KeyState getKeyState(KeyCode key);
 
 		void update();
@@ -30,6 +31,7 @@ namespace Hyperion {
 		// Overridable
 		void virtual onUpdate();
 		void virtual onKeyPress(KeyCode key, KeyState state);
+		void virtual onMouseMove(glm::dvec2 pos);
 		void virtual onTerminate();
 	};
 
@@ -37,3 +39,4 @@ namespace Hyperion {
 }
 
 void keyPress(GLFWwindow* window, int key, int scancode, int action, int mods);
+static void mouseMove(GLFWwindow* window, double xpos, double ypos);

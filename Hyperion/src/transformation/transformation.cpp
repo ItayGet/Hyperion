@@ -28,6 +28,10 @@ namespace Hyperion {
 		mat = glm::translate(mat, pos);
 	}
 
+	void Transformation::rotateAxes(const glm::vec3& axis, float angle) {
+		mat = glm::rotate(mat, angle, axis);
+	}
+
 	void Transformation::translate(const glm::vec3& point) {
 		multiplyByMat(glm::translate(glm::mat4(1.), point));
 	}

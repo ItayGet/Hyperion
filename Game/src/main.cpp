@@ -2,6 +2,7 @@
 #include "glm/gtx/transform.hpp"
 
 #include <iostream>
+#include "glm/gtx/string_cast.hpp"
 
 #define SPEED .1f
 
@@ -10,6 +11,7 @@ namespace Hpr = Hyperion;
 class Game : public Hpr::EventHandler {
 	bool succ;
 	Hpr::GameObject go1;
+	glm::dvec2 prevPos;
 
 public:
 	Game() : Hpr::EventHandler("Game", 640, 480, succ) {
@@ -20,6 +22,8 @@ public:
 		go1.setTranform(glm::mat4(1.));
 		go1.setTranslation(glm::vec3(-.5, 0., 10.));
 		go1.rotate(glm::vec3(0., 1., 0.), glm::radians(10.f));
+
+		getMousePos(prevPos);
 	}
 
 	void onUpdate() {
@@ -42,6 +46,18 @@ public:
 		if (getKeyState(Hpr::KeyCode::LEFT_SHIFT) == Hpr::KeyState::PRESSED) {
 			go1.translate(glm::vec3(0, -1, 0) * SPEED);
 		}
+
+		//temporary way of rotating the camera
+		glm::dvec2 pos;
+		getMousePos(pos);
+		auto dpos = pos - prevPos;
+
+		if (dpos != glm::dvec2(0.)) {
+			go1.rotateAxes(-glm::vec3(dpos.y, dpos.x, 0.), glm::atan(glm::length(dpos) / 100.));
+		}
+
+		prevPos = pos;
+
 	}
 
 	void onKeyPress(Hpr::KeyCode key, Hpr::KeyState state) {
@@ -55,8 +71,6 @@ public:
 			case Hpr::KeyCode::E:
 				a -= glm::vec3(.2, 0., 0.);
 				go1.setColor(a);
-				break;
-			default:
 				break;
 			}
 		}

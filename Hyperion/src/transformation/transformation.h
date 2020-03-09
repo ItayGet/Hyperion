@@ -15,6 +15,7 @@ namespace Hyperion {
 		void clearTranslation(glm::mat4& mat);
 
 		void rotate(const glm::vec3& axis, float angle);
+		void rotateAxes(const glm::vec3& axis, float angle);
 		void translate(const glm::vec3& point);
 
 		glm::vec3 getTranslation();
