@@ -9,6 +9,9 @@ namespace Hyperion {
 		void multiplyByMat(const glm::mat4& mat);
 
 	public:
+		Transformation();
+		Transformation(const glm::mat4& mat);
+
 		static Transformation& toTransformation(glm::mat4& mat);
 		static glm::mat4& toMatrix(Transformation& trans);
 

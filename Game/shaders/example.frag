@@ -1,5 +1,5 @@
 #version 330 core
-#define MAX_DIST 50.
+#define MAX_DIST 1000.
 #define EPSILON .01
 #define MAX_SHAPES 128
 
@@ -31,6 +31,10 @@ layout (std140) uniform shape {
 	uint shapesSize;
 };
 
+layout (std140) uniform camera {
+    mat4 cameraPos;
+};
+
 vec3 transformVec(mat4 mat, vec3 vec) {
 	vec4 v4 = vec4(vec, 1.);
 	return (mat * v4).xyz;
@@ -52,7 +56,7 @@ float sdfSphere(Shape s, vec3 pos) {
 }
 	
 float sdf(Shape s, vec3 pos) {
-	pos = transformVec(s.transform, pos);
+	pos = transformVec(s.transform, transformVec(cameraPos, pos));
 	float sdf;
 	if(s.type == rect) {
 		sdf = sdfRect(s, pos);
@@ -148,7 +152,7 @@ void main()
 		}
 	}
 	*/
-	
+
     // Output to screen
     fragColor = vec4(col,1.0);
 }

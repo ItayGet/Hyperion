@@ -13,8 +13,9 @@ namespace Hyperion {
 
 		window = initializer->getWindow();
 
-		shapeManager = std::unique_ptr<ShapeManager>(new ShapeManager());
-		renderer = std::unique_ptr<Renderer>(new Renderer(window, shapeManager->getShapes()));
+		shapeManager = std::make_unique<ShapeManager>();
+		renderer = std::make_unique<Renderer>(window, shapeManager->getShapes());
+		uniformManager = std::make_unique<UniformManager>(renderer->getShader());
 	}
 
 	Hyperion::~Hyperion() {
@@ -29,6 +30,10 @@ namespace Hyperion {
 	//void Hyperion::removeShape() {
 	//	
 	//}
+
+	UniformManager& Hyperion::getUniformManager() {
+		return *uniformManager;
+	}
 
 	bool Hyperion::update() {
 		bool succ = renderer->update(*shapeManager->getQueue());

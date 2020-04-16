@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -93,7 +93,8 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile />
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\BOOST;$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -116,7 +117,8 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile />
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\BOOST;$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -140,9 +142,10 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\BOOST;$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ShowIncludes>true</ShowIncludes>
       <PrecompiledHeaderOutputFile />
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -169,7 +172,8 @@
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile />
-      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)dependencies\BOOST;$(ProjectDir)dependencies\GLFW\include;$(ProjectDir)/src;$(ProjectDir)dependencies\GLEW\glew-2.1.0\include;$(ProjectDir)dependencies\GLM;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -196,7 +200,9 @@
     <ClInclude Include="src\initializer\initializer.h" />
     <ClInclude Include="src\hpr.h" />
     <ClInclude Include="src\shape\shape.h" />
+    <ClInclude Include="src\sizeany\sizedany.h" />
     <ClInclude Include="src\transformation\transformation.h" />
+    <ClInclude Include="src\uniformmanager\uniformmanager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
@@ -208,7 +214,9 @@
     <ClCompile Include="src\shader\shader.cpp" />
     <ClCompile Include="src\initializer\initializer.cpp" />
     <ClCompile Include="src\shape\shape.cpp" />
+    <ClCompile Include="src\sizeany\sizedany.cpp" />
     <ClCompile Include="src\transformation\transformation.cpp" />
+    <ClCompile Include="src\uniformmanager\uniformmanager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

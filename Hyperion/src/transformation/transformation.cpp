@@ -2,6 +2,12 @@
 #include "glm/gtx/transform.hpp"
 
 namespace Hyperion {
+	Transformation::Transformation() : Transformation(glm::mat4(1.)) {}
+
+	Transformation::Transformation(const glm::mat4& mat) {
+		this->mat = mat;
+	}
+
 	void Transformation::multiplyByMat(const glm::mat4& mat) {
 		this->mat *= mat;
 	}

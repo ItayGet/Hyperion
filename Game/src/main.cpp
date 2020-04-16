@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "glm/gtx/string_cast.hpp"
+#include "uniformmanager/uniformmanager.h"
 
 #define SPEED .1f
 
@@ -11,6 +12,7 @@ namespace Hpr = Hyperion;
 class Game : public Hpr::EventHandler {
 	bool succ;
 	Hpr::GameObject go1;
+	Hpr::GameObject go2;
 	glm::dvec2 prevPos;
 
 public:
@@ -20,31 +22,50 @@ public:
 		go1.setColor(glm::vec3(1., 1., 0.));
 		go1.setRadius(.5);
 		go1.setTranform(glm::mat4(1.));
-		go1.setTranslation(glm::vec3(-.5, 0., 10.));
+		go1.setTranslation(glm::vec3(-1., 0., 10.));
 		go1.rotate(glm::vec3(0., 1., 0.), glm::radians(10.f));
+
+		go2 = graphics.addShape();
+		go2.setType(Hpr::ShapeType::Sphere);
+		go2.setColor(glm::vec3(1., 0., 1.));
+		go2.setRadius(.5);
+		go2.setTranform(glm::mat4(1.));
+		go2.setTranslation(glm::vec3(1., 0., 10.));
 
 		getMousePos(prevPos);
 	}
 
 	void onUpdate() {
+		auto camera = graphics.getUniformManager().getUniform<Hpr::Transformation>(Hpr::UniformType::Camera);
+		camera.translate(glm::vec3(0., 0., -.1));
+		graphics.getUniformManager().setUniform<Hpr::Transformation>(Hpr::UniformType::Camera, camera);
+
+		go1.rotate(glm::vec3(1., 1., 0.), glm::radians(1.f));
+
 		//temporary way of moving the camera
 		if (getKeyState(Hpr::KeyCode::A) == Hpr::KeyState::PRESSED) {
 			go1.translate(glm::vec3(-1, 0, 0) * SPEED);
+			go2.translate(glm::vec3(-1, 0, 0) * SPEED);
 		}
 		if (getKeyState(Hpr::KeyCode::D) == Hpr::KeyState::PRESSED) {
 			go1.translate(glm::vec3(1, 0, 0) * SPEED);
+			go2.translate(glm::vec3(1, 0, 0) * SPEED);
 		}
 		if (getKeyState(Hpr::KeyCode::W) == Hpr::KeyState::PRESSED) {
 			go1.translate(glm::vec3(0, 0, -1) * SPEED);
+			go2.translate(glm::vec3(0, 0, -1) * SPEED);
 		}
 		if (getKeyState(Hpr::KeyCode::S) == Hpr::KeyState::PRESSED) {
 			go1.translate(glm::vec3(0, 0, 1) * SPEED);
+			go2.translate(glm::vec3(0, 0, 1) * SPEED);
 		}
 		if (getKeyState(Hpr::KeyCode::SPACE) == Hpr::KeyState::PRESSED) {
 			go1.translate(glm::vec3(0, 1, 0) * SPEED);
+			go2.translate(glm::vec3(0, 1, 0) * SPEED);
 		}
 		if (getKeyState(Hpr::KeyCode::LEFT_SHIFT) == Hpr::KeyState::PRESSED) {
 			go1.translate(glm::vec3(0, -1, 0) * SPEED);
+			go2.translate(glm::vec3(0, -1, 0) * SPEED);
 		}
 
 		//temporary way of rotating the camera
@@ -54,6 +75,7 @@ public:
 
 		if (dpos != glm::dvec2(0.)) {
 			go1.rotateAxes(-glm::vec3(dpos.y, dpos.x, 0.), glm::atan(glm::length(dpos) / 100.));
+			go2.rotateAxes(-glm::vec3(dpos.y, dpos.x, 0.), glm::atan(glm::length(dpos) / 100.));
 		}
 
 		prevPos = pos;
@@ -61,6 +83,7 @@ public:
 	}
 
 	void onKeyPress(Hpr::KeyCode key, Hpr::KeyState state) {
+		return;
 		if (state == Hpr::KeyState::PRESSED) {
 			auto a = go1.getColor();
 			switch (key) {

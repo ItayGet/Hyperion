@@ -1,5 +1,4 @@
 #include "renderer.h"
-#include "shader/shader.h"
 #include <iostream>
 
 #define VERTEX_FILE_PATH "shaders/example.vert"
@@ -7,7 +6,7 @@
 
 namespace Hyperion {
 
-	Renderer::Renderer(GLFWwindow* window, ShapeData* shapes) : window(window) {
+	Renderer::Renderer(GLFWwindow* window, ShapeData* shapes) : window(window), shader(VERTEX_FILE_PATH, FRAGMENT_FILE_PATH) {
 		//Setting up vertices
 		float vertices[] = {
 			-1.0f, -1.0f, 0.0f,
@@ -18,19 +17,18 @@ namespace Hyperion {
 
 		unsigned int indices[] = {
 			0, 1, 2,
-			1, 2, 3 
+			1, 2, 3
 		};
 
 		//Shader stuff
-		Shader shader(VERTEX_FILE_PATH, FRAGMENT_FILE_PATH);
+		shader = { VERTEX_FILE_PATH, FRAGMENT_FILE_PATH };
 
 		setShapeData(shapes);
 
 		shapesBlock = shader.addUniform("shape", sizeof(*shapeData), GL_DYNAMIC_DRAW);
 
-		shaderProg = shader.getShader();
 		//Shader::updateUniform(shaderProg, shapesBlock, shapeData, sizeof(*shapeData));
-		glUseProgram(shaderProg);
+		glUseProgram(shader.getShader());
 
 		// Handling vertex buffer objects and element buffer objects
 		glGenBuffers(1, &vbo);
@@ -57,6 +55,10 @@ namespace Hyperion {
 		this->shapeData = shapeData;
 	}
 
+	Shader& Renderer::getShader() {
+		return shader;
+	}
+
 	bool Renderer::update(std::vector<unsigned int>& indexesToUpdate) {
 		if (exit) {
 			terminate();
@@ -74,7 +76,7 @@ namespace Hyperion {
 		// Update uniforms
 		for (int i = 0; i < indexesToUpdate.size(); i++) {
 			Shader::updateUniformRange(
-				shader,
+				shader.getShader(),
 				shapesBlock,
 				&(shapeData->shapes[i]),
 				(unsigned int)(indexesToUpdate[i]) * sizeof(Shape),
@@ -83,7 +85,7 @@ namespace Hyperion {
 
 		}
 		Shader::updateUniformRange(
-			shader,
+			shader.getShader(),
 			shapesBlock,
 			&(shapeData->size),
 			(unsigned int)&(((ShapeData*)nullptr)->size),
@@ -101,7 +103,7 @@ namespace Hyperion {
 		glDeleteBuffers(1, &ebo);
 		glDeleteVertexArrays(1, &vao);
 		glUseProgram(0);
-		glDeleteProgram(shaderProg);
+		glDeleteProgram(shader.getShader());
 	}
 
 	Renderer::~Renderer() {

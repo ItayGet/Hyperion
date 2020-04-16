@@ -4,6 +4,7 @@
 #include "shape/shape.h"
 #include "shapemanager/shapemanager.h"
 #include "gameobject/gameobject.h"
+#include "uniformmanager/uniformmanager.h"
 #include <memory>
 
 namespace Hyperion {
@@ -12,6 +13,7 @@ namespace Hyperion {
 		std::unique_ptr<Renderer> renderer;
 		std::unique_ptr<Initializer> initializer;
 		std::unique_ptr<ShapeManager> shapeManager;
+		std::unique_ptr<UniformManager> uniformManager;
 
 	public:
 		Hyperion(
@@ -25,6 +27,7 @@ namespace Hyperion {
 
 		GameObject addShape();
 		void removeShape(GameObject go);
+		UniformManager& getUniformManager();
 
 		bool update();
 		void terminate();

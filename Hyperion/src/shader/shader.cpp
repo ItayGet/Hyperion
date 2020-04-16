@@ -76,14 +76,14 @@ namespace Hyperion {
 		return ubo;
 	}
 
-	void Shader::updateUniform(unsigned int shader, unsigned int block, void* const data, unsigned int size) {
+	void Shader::updateUniform(unsigned int shader, unsigned int block, const void* data, unsigned int size) {
 		glBindBuffer(GL_UNIFORM_BUFFER, block);
 		void* tempbuffer = glMapBuffer(GL_UNIFORM_BUFFER, GL_READ_WRITE);
 		memcpy(tempbuffer, data, size);
 		glUnmapBuffer(GL_UNIFORM_BUFFER);
 	}
 
-	void Shader::updateUniformRange(unsigned int shader, unsigned int block, void* const data, unsigned int offset, unsigned int size) {
+	void Shader::updateUniformRange(unsigned int shader, unsigned int block, const void* data, unsigned int offset, unsigned int size) {
 		glBindBuffer(GL_UNIFORM_BUFFER, block);
 		void* tempbuffer = glMapBufferRange(GL_UNIFORM_BUFFER, offset, size, GL_MAP_WRITE_BIT);
 		memcpy(tempbuffer, data, size);
