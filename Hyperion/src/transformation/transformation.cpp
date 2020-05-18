@@ -12,6 +12,7 @@ namespace Hyperion {
 		this->mat *= mat;
 	}
 
+
 	Transformation& Transformation::toTransformation(glm::mat4& mat) {
 		return (Transformation&)mat;
 	}

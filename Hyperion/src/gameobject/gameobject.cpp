@@ -53,6 +53,7 @@ namespace Hyperion {
 		getShape().setRadius(radius);
 	}
 
+
 	ShapeType GameObject::getType() {
 		return getShape().getType();
 	}

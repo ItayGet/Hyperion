@@ -2,6 +2,9 @@
 
 namespace Hyperion {
 	/* taken and modified from glfw3.h */
+	/// <summary>
+	/// Key codes from GLFW.
+	/// </summary>
 	enum class KeyCode {
 		/* Printable keys */
 		SPACE            = 32,
