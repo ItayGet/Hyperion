@@ -20,6 +20,8 @@ namespace Hyperion {
 		/// </summary>
 		unsigned int index;
 
+		Transformation transformation
+
 		/// <summary>
 		/// Gets the shape the <see cref="GameObject" /> represents.
 		/// </summary>
@@ -30,12 +32,6 @@ namespace Hyperion {
 		/// Informs the <see cref="ShapeManager" /> this shape needs to be updated.
 		/// </summary>
 		void informUpdate();
-
-		/// <summary>
-		/// Gets the transformation of the shape.
-		/// </summary>
-		/// <returns>The transformation</returns>
-		Transformation& getTransformation();
 
 	public:
 

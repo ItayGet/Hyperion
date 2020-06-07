@@ -8,8 +8,8 @@ namespace Hyperion {
 	/// </summary>
 	class HPR_API Transformation {
 	private:
-		glm::mat4 mat;
-		void multiplyByMat(const glm::mat4& mat);
+		glm::vec3 translation;
+		glm::vec3 rotation;
 
 	public:
 		/// <summary>
@@ -18,37 +18,17 @@ namespace Hyperion {
 		Transformation();
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="Transformation"/> class based on an existing matrix.
+		/// Initializes a new instance of the <see cref="Transformation"/> class based on existing values.
 		/// </summary>
-		/// <param name="mat">The matrix.</param>
-		Transformation(const glm::mat4& mat);
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Transformation" /> class based on an existing matrix.
-		/// </summary>
-		/// <param name="mat">The matrix.</param>
-		/// <returns>The new <see cref="Transformation" /> instance</returns>
-		static Transformation& toTransformation(glm::mat4& mat);
+		/// <param name="translation">The translation.</param>
+		/// <param name="rotation">The rotation.</param>
+		Transformation(const glm::vec3& translation, const glm::vec3& rotation);
 
 		/// <summary>
 		/// Converts an instance of <see cref="Transformation" /> to a matrix.
 		/// </summary>
-		/// <param name="trans">The transformation.</param>
-		/// <returns>The new matrix</returns>
-		static glm::mat4& toMatrix(Transformation& trans);
-
-		/// <summary>
-		/// Clears the translation off the matrix.
-		/// </summary>
-		/// <param name="mat">The matrix.</param>
-		void clearTranslation(glm::mat4& mat);
-
-		/// <summary>
-		/// Rotates along the position.
-		/// </summary>
-		/// <param name="axis">The axis.</param>
-		/// <param name="angle">The angle.</param>
-		void rotate(const glm::vec3& axis, float angle);
+		/// <param name="trans">The mat.</param>
+		void toMatrix(const glm::mat4& mat);
 
 		/// <summary>
 		/// Rotates along the axes.
