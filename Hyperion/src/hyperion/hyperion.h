@@ -41,6 +41,13 @@ namespace Hyperion {
 		/// </summary>
 		/// <returns>The newly added shape.</returns>
 		GameObject addShape();
+
+		/// <summary>
+		/// Gets the camera transformation, can be modified.
+		/// </summary>
+		/// <returns>The camera transformation.</returns>
+		Transformation& getCameraTransformation();
+
 		void removeShape(GameObject go);
 
 		/// <summary>

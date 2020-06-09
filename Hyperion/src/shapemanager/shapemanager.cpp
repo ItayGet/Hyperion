@@ -11,6 +11,7 @@ namespace Hyperion {
 
 	ShapeManager::ShapeManager() {
 		shapes.size = 0;
+		cameraTransformation = { glm::vec3(), glm::vec3() };
 	}
 
 	ShapeManager::~ShapeManager() {
@@ -19,6 +20,14 @@ namespace Hyperion {
 
 	ShapeData* ShapeManager::getShapes() {
 		return &shapes;
+	}
+
+	Transformation* ShapeManager::getTransformations() {
+		return transformations;
+	}
+
+	Transformation& ShapeManager::getCameraTransformation() {
+		return cameraTransformation;
 	}
 
 	GameObject ShapeManager::addShape() {

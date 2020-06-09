@@ -24,15 +24,15 @@ struct RayHit {
 	float dist;
 };
 
+layout (std140) uniform camera {
+    mat4 cameraPos;
+};
+
 out vec4 fragColor;
 
 layout (std140) uniform shape {
 	Shape shapes[MAX_SHAPES];
 	uint shapesSize;
-};
-
-layout (std140) uniform camera {
-    mat4 cameraPos;
 };
 
 vec3 transformVec(mat4 mat, vec3 vec) {

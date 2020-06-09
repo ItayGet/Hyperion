@@ -5,6 +5,7 @@
 #include "glm/glm.hpp"
 #include "shape/shape.h"
 #include "shader/shader.h"
+#include "shapemanager/shapemanager.h"
 #include <vector>
 
 namespace Hyperion {
@@ -18,7 +19,7 @@ namespace Hyperion {
 		bool exit = false;
 		unsigned int vao = 0, vbo = 0, ebo = 0;
 
-		unsigned int shapesBlock = 0;
+		unsigned int shapesBlock = 0, cameraBlock = 0;
 		Shader shader;
 		ShapeData* shapeData;
 	public:
@@ -51,8 +52,10 @@ namespace Hyperion {
 		/// Updates the specified indexes to update.
 		/// </summary>
 		/// <param name="indexesToUpdate">A list of indexes to the shape data that are needed to be sent to the GPU.</param>
+		/// <param name="transformations">A list of transformations to be updated into the shapes.</param>
+		/// <param name="cameraTransformation">The transformation of the camera that will update the camera</param>
 		/// <returns>Whether the update was successful.</returns>
-		bool update(std::vector<unsigned int>& indexesToUpdate);
+		bool update(std::vector<unsigned int>& indexesToUpdate, const Transformation* transformations, const Transformation& cameraTransformation);
 	};
 
 }

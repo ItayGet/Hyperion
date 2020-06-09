@@ -1,22 +1,24 @@
 ﻿  main.cpp
-C:\Users\itayg\source\repos\hyperion\Hyperion\src\shape\shape.h(13,22): warning C4251: 'Hyperion::Shape::transform': struct 'glm::mat<4,4,glm::f32,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
+C:\Users\itayg\source\repos\hyperion\Hyperion\src\shape\shape.h(24,22): warning C4251: 'Hyperion::Shape::transform': struct 'glm::mat<4,4,glm::f32,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
 C:\Users\itayg\source\repos\hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(518): message : see declaration of 'glm::mat<4,4,glm::f32,0>'
-C:\Users\itayg\source\repos\hyperion\Hyperion\src\shape\shape.h(14,18): warning C4251: 'Hyperion::Shape::color': struct 'glm::vec<4,float,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
+C:\Users\itayg\source\repos\hyperion\Hyperion\src\shape\shape.h(29,18): warning C4251: 'Hyperion::Shape::color': struct 'glm::vec<4,float,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Shape'
 C:\Users\itayg\source\repos\hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(419): message : see declaration of 'glm::vec<4,float,0>'
-C:\Users\itayg\source\repos\hyperion\Hyperion\src\shapemanager\shapemanager.h(12,34): warning C4251: 'Hyperion::ShapeManager::queue': class 'std::vector<unsigned int,std::allocator<unsigned int>>' needs to have dll-interface to be used by clients of class 'Hyperion::ShapeManager'
-C:\Users\itayg\source\repos\hyperion\Hyperion\src\renderer\renderer.h(27): message : see declaration of 'std::vector<unsigned int,std::allocator<unsigned int>>'
-C:\Users\itayg\source\repos\hyperion\Hyperion\src\transformation\transformation.h(8,16): warning C4251: 'Hyperion::Transformation::mat': struct 'glm::mat<4,4,glm::f32,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Transformation'
-C:\Users\itayg\source\repos\hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(518): message : see declaration of 'glm::mat<4,4,glm::f32,0>'
-C:\Users\itayg\source\repos\hyperion\Hyperion\src\sizeany\sizedany.h(6,45): warning C4275: non dll-interface class 'boost::any' used as base for dll-interface class 'Hyperion::SizedAny'
+C:\Users\itayg\source\repos\hyperion\Hyperion\src\transformation\transformation.h(11,24): warning C4251: 'Hyperion::Transformation::translation': struct 'glm::vec<3,float,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Transformation'
+C:\Users\itayg\source\repos\hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(418): message : see declaration of 'glm::vec<3,float,0>'
+C:\Users\itayg\source\repos\hyperion\Hyperion\src\transformation\transformation.h(12,21): warning C4251: 'Hyperion::Transformation::rotation': struct 'glm::vec<3,float,0>' needs to have dll-interface to be used by clients of class 'Hyperion::Transformation'
+C:\Users\itayg\source\repos\hyperion\Hyperion\dependencies\GLM\glm\fwd.hpp(418): message : see declaration of 'glm::vec<3,float,0>'
+C:\Users\itayg\source\repos\hyperion\Hyperion\src\shapemanager\shapemanager.h(33,34): warning C4251: 'Hyperion::ShapeManager::queue': class 'std::vector<unsigned int,std::allocator<unsigned int>>' needs to have dll-interface to be used by clients of class 'Hyperion::ShapeManager'
+C:\Users\itayg\source\repos\hyperion\Hyperion\src\shapemanager\shapemanager.h(33): message : see declaration of 'std::vector<unsigned int,std::allocator<unsigned int>>'
+C:\Users\itayg\source\repos\hyperion\Hyperion\src\sizedany\sizedany.h(13,45): warning C4275: non dll-interface class 'boost::any' used as base for dll-interface class 'Hyperion::SizedAny'
 C:\Users\itayg\source\repos\hyperion\Hyperion\dependencies\BOOST\boost\any.hpp(37): message : see declaration of 'boost::any'
-C:\Users\itayg\source\repos\hyperion\Hyperion\src\sizeany\sizedany.h(6): message : see declaration of 'Hyperion::SizedAny'
+C:\Users\itayg\source\repos\hyperion\Hyperion\src\sizedany\sizedany.h(13): message : see declaration of 'Hyperion::SizedAny'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\uniformmanager\uniformmanager.h(16,58): warning C4275: non dll-interface class 'std::exception' used as base for dll-interface struct 'Hyperion::BadUniformAccess'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\vcruntime_exception.h(45): message : see declaration of 'std::exception'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\uniformmanager\uniformmanager.h(16): message : see declaration of 'Hyperion::BadUniformAccess'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\uniformmanager\uniformmanager.h(35,18): warning C4251: 'Hyperion::Uniform::str': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of struct 'Hyperion::Uniform'
 C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.24.28314\include\xstring(4448): message : see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-C:\Users\itayg\source\repos\hyperion\Hyperion\src\uniformmanager\uniformmanager.h(80,52): warning C4251: 'Hyperion::UniformManager::uniforms': class 'std::unordered_map<Hyperion::UniformType,Hyperion::Uniform,std::hash<Hyperion::UniformType>,std::equal_to<Hyperion::UniformType>,std::allocator<std::pair<const Hyperion::UniformType,Hyperion::Uniform>>>' needs to have dll-interface to be used by clients of class 'Hyperion::UniformManager'
-C:\Users\itayg\source\repos\hyperion\Hyperion\src\uniformmanager\uniformmanager.h(80): message : see declaration of 'std::unordered_map<Hyperion::UniformType,Hyperion::Uniform,std::hash<Hyperion::UniformType>,std::equal_to<Hyperion::UniformType>,std::allocator<std::pair<const Hyperion::UniformType,Hyperion::Uniform>>>'
+C:\Users\itayg\source\repos\hyperion\Hyperion\src\uniformmanager\uniformmanager.h(69,52): warning C4251: 'Hyperion::UniformManager::uniforms': class 'std::unordered_map<Hyperion::UniformType,Hyperion::Uniform,std::hash<Hyperion::UniformType>,std::equal_to<Hyperion::UniformType>,std::allocator<std::pair<const Hyperion::UniformType,Hyperion::Uniform>>>' needs to have dll-interface to be used by clients of class 'Hyperion::UniformManager'
+C:\Users\itayg\source\repos\hyperion\Hyperion\src\uniformmanager\uniformmanager.h(69): message : see declaration of 'std::unordered_map<Hyperion::UniformType,Hyperion::Uniform,std::hash<Hyperion::UniformType>,std::equal_to<Hyperion::UniformType>,std::allocator<std::pair<const Hyperion::UniformType,Hyperion::Uniform>>>'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(17,37): warning C4251: 'Hyperion::Hyperion::renderer': class 'std::unique_ptr<Hyperion::Renderer,std::default_delete<Hyperion::Renderer>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(17): message : see declaration of 'std::unique_ptr<Hyperion::Renderer,std::default_delete<Hyperion::Renderer>>'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(18,43): warning C4251: 'Hyperion::Hyperion::initializer': class 'std::unique_ptr<Hyperion::Initializer,std::default_delete<Hyperion::Initializer>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
@@ -25,4 +27,14 @@ C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(19,45): wa
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(19): message : see declaration of 'std::unique_ptr<Hyperion::ShapeManager,std::default_delete<Hyperion::ShapeManager>>'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(20,49): warning C4251: 'Hyperion::Hyperion::uniformManager': class 'std::unique_ptr<Hyperion::UniformManager,std::default_delete<Hyperion::UniformManager>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(20): message : see declaration of 'std::unique_ptr<Hyperion::UniformManager,std::default_delete<Hyperion::UniformManager>>'
+C:\Users\itayg\source\repos\hyperion\Game\src\main.cpp(76,18): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\itayg\source\repos\hyperion\Game\src\main.cpp(79,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
   Game.vcxproj -> C:\Users\itayg\source\repos\hyperion\x64\Debug\Game.exe

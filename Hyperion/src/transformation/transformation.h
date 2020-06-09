@@ -28,26 +28,15 @@ namespace Hyperion {
 		/// Converts an instance of <see cref="Transformation" /> to a matrix.
 		/// </summary>
 		/// <param name="trans">The mat.</param>
-		void toMatrix(const glm::mat4& mat);
+		void toMatrix(glm::mat4& mat) const;
 
-		/// <summary>
-		/// Rotates along the axes.
-		/// </summary>
-		/// <param name="axis">The axis.</param>
-		/// <param name="angle">The angle.</param>
-		void rotateAxes(const glm::vec3& axis, float angle);
-
-		/// <summary>
-		/// Adds <paramref cref="point" /> to the position of the instance.
-		/// </summary>
-		/// <param name="point">The point.</param>
-		void translate(const glm::vec3& point);
+		void toMatrixCamera(glm::mat4& mat) const;
 
 		/// <summary>
 		/// Gets the translation.
 		/// </summary>
 		/// <returns>The translation.</returns>
-		glm::vec3 getTranslation();
+		const glm::vec3& getTranslation() const;
 
 		/// <summary>
 		/// Sets the translation.
@@ -58,13 +47,13 @@ namespace Hyperion {
 		/// <summary>
 		/// Gets the rotation.
 		/// </summary>
-		/// <returns>The rotation</returns>
-		glm::mat4 getRotation();
+		/// <returns>The rotation.</returns>
+		const glm::vec3& getRotation() const;
 
 		/// <summary>
 		/// Sets the rotation.
 		/// </summary>
 		/// <param name="rotation">The rotation.</param>
-		void setRotation(const glm::mat4& rotation);
+		void setRotation(const glm::vec3& rotation);
 	};
 }

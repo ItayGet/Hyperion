@@ -26,8 +26,8 @@ namespace Hyperion {
 		setShapeData(shapes);
 
 		shapesBlock = shader.addUniform("shape", sizeof(*shapeData), GL_DYNAMIC_DRAW);
+		cameraBlock = shader.addUniform("camera", sizeof(glm::mat4), GL_DYNAMIC_DRAW);
 
-		//Shader::updateUniform(shaderProg, shapesBlock, shapeData, sizeof(*shapeData));
 		glUseProgram(shader.getShader());
 
 		// Handling vertex buffer objects and element buffer objects
@@ -59,7 +59,7 @@ namespace Hyperion {
 		return shader;
 	}
 
-	bool Renderer::update(std::vector<unsigned int>& indexesToUpdate) {
+	bool Renderer::update(std::vector<unsigned int>& indexesToUpdate, const Transformation* transformations, const Transformation& cameraTransformation) {
 		if (exit) {
 			terminate();
 			return false;
@@ -73,13 +73,18 @@ namespace Hyperion {
 		// Poll Events
 		glfwPollEvents();
 		
-		// Update uniforms
 		for (int i = 0; i < indexesToUpdate.size(); i++) {
+			int index = indexesToUpdate[i];
+
+			// Update matrices
+			transformations[index].toMatrix((glm::mat4&)shapeData->shapes[index].getTransform());
+
+			// Update uniforms
 			Shader::updateUniformRange(
 				shader.getShader(),
 				shapesBlock,
 				&(shapeData->shapes[i]),
-				(unsigned int)(indexesToUpdate[i]) * sizeof(Shape),
+				(unsigned int)(index) * sizeof(Shape),
 				sizeof(Shape)
 			);
 
@@ -90,6 +95,15 @@ namespace Hyperion {
 			&(shapeData->size),
 			(unsigned int)&(((ShapeData*)nullptr)->size),
 			sizeof(unsigned int)
+		);
+
+		glm::mat4 cameraMat;
+		cameraTransformation.toMatrixCamera(cameraMat);
+		Shader::updateUniform(
+			shader.getShader(),
+			cameraBlock,
+			&cameraMat,
+			sizeof(glm::mat4)
 		);
 
 		// Swap buffers

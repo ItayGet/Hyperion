@@ -26,6 +26,10 @@ namespace Hyperion {
 		return shapeManager->addShape();
 	}
 
+	Transformation& Hyperion::getCameraTransformation() {
+		return shapeManager->getCameraTransformation();
+	}
+
 	//TODO:
 	//void Hyperion::removeShape() {
 	//	
@@ -36,7 +40,7 @@ namespace Hyperion {
 	}
 
 	bool Hyperion::update() {
-		bool succ = renderer->update(*shapeManager->getQueue());
+		bool succ = renderer->update(*shapeManager->getQueue(), shapeManager->getTransformations(), shapeManager->getCameraTransformation());
 		shapeManager->clearQueue();
 		return succ;
 	}

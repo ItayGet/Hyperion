@@ -1,6 +1,7 @@
 #pragma once
 #include "api.h"
 #include "shape/shape.h"
+#include "transformation/transformation.h"
 #include <vector>
 
 namespace Hyperion {
@@ -15,6 +16,16 @@ namespace Hyperion {
 		/// The shapes themselves.
 		/// </summary>
 		ShapeData shapes;
+
+		/// <summary>
+		/// The transforamtions of each shape. 
+		/// </summary>
+		Transformation transformations[HPR_MAX_SHAPES];
+
+		/// <summary>
+		/// The camera transformation.
+		/// </summary>
+		Transformation cameraTransformation;
 
 		/// <summary>
 		/// A queue which stores the index to every shape that needs to be updated on the next update.
@@ -39,6 +50,18 @@ namespace Hyperion {
 		/// </summary>
 		/// <returns>The Shapes.</returns>
 		ShapeData* getShapes();
+
+		/// <summary>
+		/// Gets the transformations.
+		/// </summary>
+		/// <returns>The transformations.</returns>
+		Transformation* getTransformations();
+
+		/// <summary>
+		/// Gets the camera transformation.
+		/// </summary>
+		/// <returns></returns>
+		Transformation& getCameraTransformation();
 
 		/// <summary>
 		/// Allocates a place for a new shape and returns it.

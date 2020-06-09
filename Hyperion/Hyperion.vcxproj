@@ -200,7 +200,7 @@
     <ClInclude Include="src\initializer\initializer.h" />
     <ClInclude Include="src\hpr.h" />
     <ClInclude Include="src\shape\shape.h" />
-    <ClInclude Include="src\sizeany\sizedany.h" />
+    <ClInclude Include="src\sizedany\sizedany.h" />
     <ClInclude Include="src\transformation\transformation.h" />
     <ClInclude Include="src\uniformmanager\uniformmanager.h" />
   </ItemGroup>
@@ -214,7 +214,7 @@
     <ClCompile Include="src\shader\shader.cpp" />
     <ClCompile Include="src\initializer\initializer.cpp" />
     <ClCompile Include="src\shape\shape.cpp" />
-    <ClCompile Include="src\sizeany\sizedany.cpp" />
+    <ClCompile Include="src\sizedany\sizedany.cpp" />
     <ClCompile Include="src\transformation\transformation.cpp" />
     <ClCompile Include="src\uniformmanager\uniformmanager.cpp" />
   </ItemGroup>

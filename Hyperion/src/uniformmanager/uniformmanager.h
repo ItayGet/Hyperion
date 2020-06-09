@@ -1,7 +1,7 @@
 #pragma once
 #include "api.h"
 #include "glm/glm.hpp"
-#include "sizeany/sizedany.h"
+#include "sizedany/sizedany.h"
 #include "shader/shader.h"
 #include "gameobject/gameobject.h"
 #include <unordered_map>
@@ -53,10 +53,6 @@ namespace Hyperion {
 		/// The resolution of the window.
 		/// </summary>
 		Resolution,
-		/// <summary>
-		/// The camera. Can control the perspective of all other object.
-		/// </summary>
-		Camera,
 	};
 
 	/// <summary>

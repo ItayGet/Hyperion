@@ -20,8 +20,6 @@ namespace Hyperion {
 		/// </summary>
 		unsigned int index;
 
-		Transformation transformation
-
 		/// <summary>
 		/// Gets the shape the <see cref="GameObject" /> represents.
 		/// </summary>
@@ -48,22 +46,16 @@ namespace Hyperion {
 		void _wireSm(ShapeManager* sm, unsigned int index);
 
 		/// <summary>
-		/// Clears the translation off the matrix.
+		/// Gets the transformation of the shape.
 		/// </summary>
-		/// <param name="mat">The matrix.</param>
-		void clearTranslation(glm::mat4& mat);
+		/// <returns>The transformation.</returns>
+		const Transformation& getTransformation();
 
 		/// <summary>
-		/// Gets the transformation matrix of the shape.
+		/// Sets the transformation of the shape.
 		/// </summary>
-		/// <returns>The transformation matrix</returns>
-		const glm::mat4& getTransform();
-
-		/// <summary>
-		/// Sets the transformation matrix of the shape.
-		/// </summary>
-		/// <param name="transform">The transformation matrix.</param>
-		void setTranform(const glm::mat4& transform);
+		/// <param name="transform">The transformation.</param>
+		void setTransformation(const Transformation& transformation);
 
 		/// <summary>
 		/// Gets the color of the shape.
@@ -104,47 +96,15 @@ namespace Hyperion {
 		void setType(ShapeType type);
 
 		/// <summary>
-		/// Rotates along the position.
+		/// Sets the translation of the shape.
 		/// </summary>
-		/// <param name="axis">The axis.</param>
-		/// <param name="angle">The angle.</param>
-		void rotate(const glm::vec3& axis, float angle);
-
-		/// <summary>
-		/// Rotates along the axes.
-		/// </summary>
-		/// <param name="axis">The axis.</param>
-		/// <param name="angle">The angle.</param>
-		void rotateAxes(const glm::vec3& axis, float angle);
-
-		/// <summary>
-		/// Adds <paramref cref="point" /> to the position of the instance.
-		/// </summary>
-		/// <param name="point">The point.</param>
-		void translate(const glm::vec3& point);
-
-		/// <summary>
-		/// Gets the translation.
-		/// </summary>
-		/// <returns>The translation.</returns>
-		glm::vec3 getTranslation();
-
-		/// <summary>
-		/// Sets the translation.
-		/// </summary>
-		/// <param name="translation">The translation.</param>
+		/// <param name="translation">The translation of the shape.</param>
 		void setTranslation(const glm::vec3& translation);
 
 		/// <summary>
-		/// Gets the rotation.
+		/// Sets the rotation of the shape.
 		/// </summary>
-		/// <returns>The rotation</returns>
-		glm::mat4 getRotation();
-
-		/// <summary>
-		/// Sets the rotation.
-		/// </summary>
-		/// <param name="rotation">The rotation.</param>
-		void setRotation(const glm::mat4& rotation);
+		/// <param name="rotation">The rotation of the shape.</param>
+		void setRotation(const glm::vec3& rotation);
 	};
 }

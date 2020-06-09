@@ -1,66 +1,46 @@
 #include "transformation.h"
 #include "glm/gtx/transform.hpp"
+#include "glm/gtx/euler_angles.hpp"
+
+inline glm::vec3 wrapAngle(const glm::vec3& angle)
+{
+	const float twoPi = 2 * glm::pi<float>();
+	return angle - twoPi * floor(angle / twoPi);
+}
 
 namespace Hyperion {
-	Transformation::Transformation() : Transformation(glm::mat4(1.)) {}
+	Transformation::Transformation() : translation(1.), rotation(1.) {}
 
-	Transformation::Transformation(const glm::mat4& mat) {
-		this->mat = mat;
+	Transformation::Transformation(const glm::vec3& translation, const glm::vec3& rotation) {
+		setTranslation(translation);
+		setRotation(rotation);
 	}
 
-	void Transformation::multiplyByMat(const glm::mat4& mat) {
-		this->mat *= mat;
+	void Transformation::toMatrix(glm::mat4& mat) const {
+		mat = glm::mat4(1.);
+		mat *= glm::yawPitchRoll(rotation.x, rotation.y, rotation.z);
+		mat = glm::translate(mat, translation);
 	}
 
-
-	Transformation& Transformation::toTransformation(glm::mat4& mat) {
-		return (Transformation&)mat;
+	void Transformation::toMatrixCamera(glm::mat4& mat) const {
+		mat = glm::mat4(1.);
+		mat = glm::translate(mat, translation);
+		mat *= glm::yawPitchRoll(rotation.x, rotation.y, rotation.z);
 	}
 
-	glm::mat4& Transformation::toMatrix(Transformation& trans) {
-		return (glm::mat4&)trans;
-	}
-
-	void Transformation::clearTranslation(glm::mat4& mat) {
-		mat[3] = glm::vec4(glm::vec3(0.), 1.);
-	}
-
-	// Rotate along origin of shape
-	void Transformation::rotate(const glm::vec3& axis, float angle) {
-		auto pos = getTranslation();
-
-		clearTranslation(mat);
-
-		mat = glm::rotate(mat, angle, axis);
-		mat = glm::translate(mat, pos);
-	}
-
-	void Transformation::rotateAxes(const glm::vec3& axis, float angle) {
-		mat = glm::rotate(mat, angle, axis);
-	}
-
-	void Transformation::translate(const glm::vec3& point) {
-		multiplyByMat(glm::translate(glm::mat4(1.), point));
-	}
-
-	glm::vec3 Transformation::getTranslation() {
-		return glm::vec3(glm::inverse(mat) * glm::vec4(glm::vec3(0.), 1.)) * -1.f;
+	const glm::vec3& Transformation::getTranslation() const {
+		return translation;
 	}
 
 	void Transformation::setTranslation(const glm::vec3& translation) {
-		clearTranslation(mat);
-		translate(translation);
+		this->translation = translation;
 	}
 
-	glm::mat4 Transformation::getRotation() {
-		glm::mat4 tmp = mat;
-		clearTranslation(tmp);
-		return tmp;
+	const glm::vec3& Transformation::getRotation() const {
+		return rotation;
 	}
 
-	void Transformation::setRotation(const glm::mat4& rotation) {
-		glm::vec3 pos = getTranslation();
-		mat = rotation;
-		setTranslation(pos);
+	void Transformation::setRotation(const glm::vec3& rotation) {
+		this->rotation = wrapAngle(rotation);
 	}
 }

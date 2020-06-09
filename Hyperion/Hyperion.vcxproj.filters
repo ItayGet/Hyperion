@@ -57,7 +57,7 @@
     <ClInclude Include="src\uniformmanager\uniformmanager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sizeany\sizedany.h">
+    <ClInclude Include="src\sizedany\sizedany.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -95,7 +95,7 @@
     <ClCompile Include="src\uniformmanager\uniformmanager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sizeany\sizedany.cpp">
+    <ClCompile Include="src\sizedany\sizedany.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

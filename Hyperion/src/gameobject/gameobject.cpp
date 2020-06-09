@@ -11,8 +11,12 @@ namespace Hyperion {
 		sm->addQueue(index);
 	}
 
-	Transformation& GameObject::getTransformation() {
-		return (Transformation&)getTransform();
+	const Transformation& GameObject::getTransformation() {
+		return (sm->getTransformations()[index]);
+	}
+
+	void GameObject::setTransformation(const Transformation& transformation) {
+		sm->getTransformations()[index] = transformation;
 	}
 
 	GameObject::GameObject() : sm(nullptr), index(-1) {}
@@ -20,19 +24,6 @@ namespace Hyperion {
 	void GameObject::_wireSm(ShapeManager* sm, unsigned int index) {
 		this->sm = sm;
 		this->index = index;
-	}
-
-	void GameObject::clearTranslation(glm::mat4& mat) {
-		mat[3] = glm::vec4(glm::vec3(0.), 1.);
-	}
-
-	const glm::mat4& GameObject::getTransform() {
-		return getShape().getTransform();
-	}
-
-	void GameObject::setTranform(const glm::mat4& transform) {
-		informUpdate();
-		getShape().setTransform(transform);
 	}
 
 	const glm::vec3& GameObject::getColor() {
@@ -63,38 +54,13 @@ namespace Hyperion {
 		getShape().setType(type);
 	}
 
-	// Rotate along origin of shape
-	void GameObject::rotate(const glm::vec3& axis, float angle) {
-		informUpdate();
-		getTransformation().rotate(axis, angle);
-	}
-
-	// Rotate along axes
-	void GameObject::rotateAxes(const glm::vec3& axis, float angle) {
-		informUpdate();
-		getTransformation().rotateAxes(axis, angle);
-	}
-
-	void GameObject::translate(const glm::vec3& point) {
-		informUpdate();
-		getTransformation().translate(point);
-	}
-
-	glm::vec3 GameObject::getTranslation() {
-		return getTransformation().getTranslation();
-	}
-
 	void GameObject::setTranslation(const glm::vec3& translation) {
 		informUpdate();
-		getTransformation().setTranslation(translation);
+		((Transformation&)getTransformation()).setTranslation(translation);
 	}
 
-	glm::mat4 GameObject::getRotation() {
-		return getTransformation().getRotation();
-	}
-
-	void GameObject::setRotation(const glm::mat4& rotation) {
+	void GameObject::setRotation(const glm::vec3& rotation) {
 		informUpdate();
-		getTransformation().setRotation(rotation);
+		((Transformation&)getTransformation()).setRotation(rotation);
 	}
 }

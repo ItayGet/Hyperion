@@ -2,6 +2,8 @@
 #include "api.h"
 #include "glm/glm.hpp"
 
+#define HPR_MAX_SHAPES 128
+
 namespace Hyperion {
 	/// <summary>
 	/// The different types of shapes the library supports
@@ -118,7 +120,7 @@ namespace Hyperion {
 		/// <summary>
 		/// The shapes.
 		/// </summary>
-		Shape shapes[128];
+		Shape shapes[HPR_MAX_SHAPES];
 
 		/// <summary>
 		/// The amount of shapes being displayed right now.
