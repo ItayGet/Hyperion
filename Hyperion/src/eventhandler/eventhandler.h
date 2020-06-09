@@ -62,7 +62,7 @@ namespace Hyperion {
 		/// <summary>
 		/// This function needs to be called in <c>main</c> in order to run the library.
 		/// </summary>
-		void update();
+		void start();
 
 		/// <summary>
 		/// This function needs to be overriden and is called every frame.

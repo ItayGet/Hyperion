@@ -18,7 +18,7 @@ namespace Hyperion {
 		graphics.terminate();
 	}
 
-	void EventHandler::update() {
+	void EventHandler::start() {
 		while (graphics.update()) {
 			onUpdate();
 		}

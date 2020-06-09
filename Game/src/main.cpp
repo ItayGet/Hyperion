@@ -110,5 +110,5 @@ public:
 
 int main(void) {
 	Game a;
-	a.update();
+	a.start();
 }
