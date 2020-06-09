@@ -15,7 +15,7 @@ struct Ray {
 struct Shape {
 	mat4 transform;
 	vec4 color;
-    float radius;
+    vec4 size;
 	int type;
 };
 
@@ -47,12 +47,21 @@ Ray rayFromAngleEx(vec2 fragCoord, vec2 size, float fov) {
 }
    
 float sdfRect(Shape s, vec3 pos) {
-  vec3 q = abs(pos) - vec3(s.radius);
+  vec3 q = abs(pos) - s.size.xyz;
   return length(max(q,0.0)) + min(max(q.x,max(q.y,q.z)),0.0);
 }
    
 float sdfSphere(Shape s, vec3 pos) {
-	return length(pos) - s.radius;
+	float k0 = length(pos/s.size.xyz);
+	float k1 = length(pos/(s.size.xyz*s.size.xyz));
+	return k0*(k0-1.0)/k1;
+}
+
+float sdEllipsoid( vec3 p, vec3 r )
+{
+  float k0 = length(p/r);
+  float k1 = length(p/(r*r));
+  return k0*(k0-1.0)/k1;
 }
 	
 float sdf(Shape s, vec3 pos) {
@@ -65,10 +74,6 @@ float sdf(Shape s, vec3 pos) {
 	}
 	return sdf;
 }
-
-// float sdf(Shape s, vec3 pos) {
-    // return length(s.pos-pos) - s.radius;
-// }
 
 RayHit sdfScene(vec3 pos) {
 	float prevsdf = MAX_DIST;
@@ -143,7 +148,7 @@ void main()
 	} else {
 		if (uv.y > 0) {
 			if (uv.y > .25) {
-				col = vec3(s.radius);
+				col = vec3(s.size.xyz);
 			} else {
 				col = vec3(shapesSize);
 			}

@@ -35,13 +35,13 @@ namespace Hyperion {
 		getShape().setColor(glm::vec4(color, 1.));
 	}
 
-	float GameObject::getRadius() {
-		return getShape().getRadius();
+	const glm::vec3& GameObject::getSize() {
+		return getShape().getSize();
 	}
 
-	void GameObject::setRadius(float radius) {
+	void GameObject::setSize(const glm::vec3& size) {
 		informUpdate();
-		getShape().setRadius(radius);
+		getShape().setSize(glm::vec4(size, 1.));
 	}
 
 

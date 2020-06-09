@@ -70,16 +70,16 @@ namespace Hyperion {
 		void setColor(const glm::vec3& color);
 
 		/// <summary>
-		/// Gets the radius of the shpae.
+		/// Gets the size of the shape.
 		/// </summary>
-		/// <returns>The radius</returns>
-		float getRadius();
+		/// <returns>The size</returns>
+		const glm::vec3& getSize();
 
 		/// <summary>
-		/// Sets the radius of the shape.
+		/// Sets the size of the shape.
 		/// </summary>
-		/// <param name="radius">The radius.</param>
-		void setRadius(float radius);
+		/// <param name="radius">The size.</param>
+		void setSize(const glm::vec3& size);
 
 		/// <summary>
 		/// Gets the type of the shape.

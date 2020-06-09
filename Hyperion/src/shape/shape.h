@@ -31,7 +31,7 @@ namespace Hyperion {
 		/// <summary>
 		/// The radius of the shape.
 		/// </summary>
-		float radius;
+		glm::vec4 size;
 
 		/// <summary>
 		/// The type of the shape.
@@ -41,14 +41,8 @@ namespace Hyperion {
 		/// <summary>
 		/// Padding due to how std140 transfers uniforms.
 		/// </summary>
-		float padding[2];
+		float padding[3];
 
-		//glm::vec3 pos;
-		//glm::vec3 rotation;
-		//glm::vec3 scaling;
-		//glm::vec3 color;
-		//ShapeType type;
-		//Texture texture;
 	public:
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Shape"/> class.
@@ -57,7 +51,7 @@ namespace Hyperion {
 		/// <param name="color">The color.</param>
 		/// <param name="radius">The radius.</param>
 		/// <param name="type">The type.</param>
-		Shape(glm::mat4 transform, glm::vec4 color, float radius, ShapeType type);
+		Shape(const glm::mat4& transform, const glm::vec4& color, const glm::vec4& size, ShapeType type);
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Shape"/> class.
@@ -77,16 +71,16 @@ namespace Hyperion {
 		const glm::mat4& getTransform();
 
 		/// <summary>
-		/// Sets the radius of the shape.
+		/// Sets the size of the shape.
 		/// </summary>
-		/// <param name="radius">The radius.</param>
-		void setRadius(float radius);
+		/// <param name="radius">The size.</param>
+		void setSize(const glm::vec4& size);
 
 		/// <summary>
 		/// Gets the radius of the shape.
 		/// </summary>
 		/// <returns>The radius.</returns>
-		float getRadius();
+		const glm::vec4& getSize();
 
 		/// <summary>
 		/// Sets the color of the shape.

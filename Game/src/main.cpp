@@ -21,30 +21,30 @@ class Game : public Hpr::EventHandler {
 public:
 	Game() : Hpr::EventHandler("Game", 640, 480, succ) {
 		go1 = graphics.addShape();
-		go1.setType(Hpr::ShapeType::Square);
+		go1.setType(Hpr::ShapeType::Sphere);
 		go1.setColor(glm::vec3(1., 1., 0.));
-		go1.setRadius(.5);
+		go1.setSize(glm::vec3(.5, .5, 1.));
 		go1.setTranslation(glm::vec3(-1., 0., 10.));
 		go1.setRotation(glm::radians(glm::vec3(0.f)));
 
 		go2 = graphics.addShape();
 		go2.setType(Hpr::ShapeType::Square);
 		go2.setColor(glm::vec3(1., 0., 0.));
-		go2.setRadius(.5);
+		go2.setSize(glm::vec3(.5, 1., 1.));
 		go2.setTranslation(glm::vec3(10., 0., 0.));
 		go2.setRotation(glm::radians(glm::vec3(0.f)));
 
 		go2 = graphics.addShape();
 		go2.setType(Hpr::ShapeType::Square);
 		go2.setColor(glm::vec3(1., 0., 1.));
-		go2.setRadius(.5);
+		go2.setSize(glm::vec3(.5));
 		go2.setTranslation(glm::vec3(0., -10., 0.));
 		go2.setRotation(glm::radians(glm::vec3(0.f)));
 
 		go3 = graphics.addShape();
 		go3.setType(Hpr::ShapeType::Square);
 		go3.setColor(glm::vec3(0., 0., 1.));
-		go3.setRadius(.5);
+		go3.setSize(glm::vec3(.5));
 		go3.setTranslation(glm::vec3(0., 10., 0.));
 		go3.setRotation(glm::radians(glm::vec3(0.f)));
 
@@ -54,13 +54,11 @@ public:
 	}
 
 	void onUpdate() {
-		//go1.setTranslation(go1.getTransformation().getTranslation() + glm::vec3(.01, 0., 0.));
+		go1.setTranslation(go1.getTransformation().getTranslation() + glm::vec3(.01, 0., 0.));
 
 		moveCamera();
 
 		rotateCamera();
-
-		std::cout << glm::to_string(camera->getTranslation()) << " " << glm::to_string(glm::degrees(camera->getRotation())) << std::endl;
 	}
 
 	void rotateCamera() {
