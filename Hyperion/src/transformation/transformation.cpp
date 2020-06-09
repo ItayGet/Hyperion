@@ -4,7 +4,7 @@
 
 inline glm::vec3 wrapAngle(const glm::vec3& angle)
 {
-	const float twoPi = 2 * glm::pi<float>();
+	constexpr float twoPi = 2 * glm::pi<float>();
 	return angle - twoPi * floor(angle / twoPi);
 }
 

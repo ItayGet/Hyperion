@@ -29,12 +29,12 @@ C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(19,45): wa
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(19): message : see declaration of 'std::unique_ptr<Hyperion::ShapeManager,std::default_delete<Hyperion::ShapeManager>>'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(20,49): warning C4251: 'Hyperion::Hyperion::uniformManager': class 'std::unique_ptr<Hyperion::UniformManager,std::default_delete<Hyperion::UniformManager>>' needs to have dll-interface to be used by clients of class 'Hyperion::Hyperion'
 C:\Users\itayg\source\repos\hyperion\Hyperion\src\hyperion\hyperion.h(20): message : see declaration of 'std::unique_ptr<Hyperion::UniformManager,std::default_delete<Hyperion::UniformManager>>'
-C:\Users\itayg\source\repos\hyperion\Game\src\main.cpp(74,18): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\itayg\source\repos\hyperion\Game\src\main.cpp(81,18): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\itayg\source\repos\hyperion\Game\src\main.cpp(77,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+C:\Users\itayg\source\repos\hyperion\Game\src\main.cpp(84,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float

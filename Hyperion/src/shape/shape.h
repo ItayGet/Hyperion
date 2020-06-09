@@ -73,13 +73,13 @@ namespace Hyperion {
 		/// <summary>
 		/// Sets the size of the shape.
 		/// </summary>
-		/// <param name="radius">The size.</param>
+		/// <param name="size">The size.</param>
 		void setSize(const glm::vec4& size);
 
 		/// <summary>
 		/// Gets the radius of the shape.
 		/// </summary>
-		/// <returns>The radius.</returns>
+		/// <returns>The size.</returns>
 		const glm::vec4& getSize();
 
 		/// <summary>

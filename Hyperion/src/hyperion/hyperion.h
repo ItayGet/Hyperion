@@ -43,6 +43,16 @@ namespace Hyperion {
 		GameObject addShape();
 
 		/// <summary>
+		/// Adds a shape.
+		/// </summary>
+		/// <param name="transformation">The transformation.</param>
+		/// <param name="color">The color.</param>
+		/// <param name="size">The size.</param>
+		/// <param name="type">The type.</param>
+		/// <returns>The newly added shape.</returns>
+		GameObject addShape(const Transformation& transformation, const glm::vec3& color, const glm::vec3& size, ShapeType type);
+
+		/// <summary>
 		/// Gets the camera transformation, can be modified.
 		/// </summary>
 		/// <returns>The camera transformation.</returns>

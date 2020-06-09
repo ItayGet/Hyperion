@@ -26,6 +26,17 @@ namespace Hyperion {
 		return shapeManager->addShape();
 	}
 
+	GameObject Hyperion::addShape(const Transformation& transformation, const glm::vec3& color, const glm::vec3& size, ShapeType type) {
+		auto go = shapeManager->addShape();
+
+		go.setTransformation(transformation);
+		go.setColor(color);
+		go.setSize(size);
+		go.setType(type);
+
+		return go;
+	}
+
 	Transformation& Hyperion::getCameraTransformation() {
 		return shapeManager->getCameraTransformation();
 	}
